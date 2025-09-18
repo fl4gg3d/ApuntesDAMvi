@@ -1,0 +1,45 @@
+.contenedor {
+    position: relative; /* Es importante para que la imagen pueda moverse con 'absolute' */
+    width: 500px; /* Ancho del área donde se moverá la imagen */
+    height: 400px; /* Alto del área */
+    border: 1px solid black; /* Para visualizar el área */
+    margin: 50px auto; /* Centra el contenedor */
+}
+
+.imagen-rebotando {
+    position: absolute; /* Permite el posicionamiento con top, bottom, etc. */
+    width: 100px; /* Tamaño de la imagen */
+    bottom: 0; /* Empieza desde el fondo */
+    animation: rebote 1s alternate infinite ease-out; /* Aplica la animación */
+}
+
+@keyframes rebote {
+    0% {
+        bottom: 0; /* Posición inicial */
+    }
+    100% {
+        bottom: 300px; /* Posición final del rebote (se ajusta al alto del contenedor) */
+    }
+}.contenedor {
+     position: relative; /* Es importante para que la imagen pueda moverse con 'absolute' */
+     width: 500px; /* Ancho del área donde se moverá la imagen */
+     height: 400px; /* Alto del área */
+     border: 1px solid black; /* Para visualizar el área */
+     margin: 50px auto; /* Centra el contenedor */
+ }
+
+.imagen-rebotando {
+    position: absolute; /* Permite el posicionamiento con top, bottom, etc. */
+    width: 100px; /* Tamaño de la imagen */
+    bottom: 0; /* Empieza desde el fondo */
+    animation: rebote 1s alternate infinite ease-out; /* Aplica la animación */
+}
+
+@keyframes rebote {
+    0% {
+        bottom: 0; /* Posición inicial */
+    }
+    100% {
+        bottom: 300px; /* Posición final del rebote (se ajusta al alto del contenedor) */
+    }
+}
