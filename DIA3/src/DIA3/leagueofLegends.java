@@ -2,8 +2,6 @@ package DIA3;
 
 import java.util.Scanner;
 
-import jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput;
-
 public class leagueofLegends {
 
 	public static void main(String[] args) {
