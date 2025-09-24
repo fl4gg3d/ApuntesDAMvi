@@ -10,30 +10,38 @@
 			
 			int resultado = 0;
 			
-			int A = sc.nextInt();
+			int a = sc.nextInt();
 			
-			int B = sc.nextInt();
+			int b = sc.nextInt();
 			
-			int C = sc.nextInt();
+			int c = sc.nextInt();
 			
-			if (A > B) {
-				resultado = A - B;
+			int grande = 0;
+			
+			if (a > b && a > c) {
+				grande = a;
 			}
-			else if(A > C) {
-				resultado = A - C;
+			else if (b > a && b > c) {
+				grande = b;
 			}
-			else if(B > A) {
-				resultado = B - A;
+			else if (c > a && c > b) {
+				grande = c;
 			}
-			else if(B > C) {
-				resultado = B - C;
+				
+			int pequetin = 0;
+			
+			if (a < b && a <c) {
+				pequetin = a;
 			}
-			else if(C > A) {
-				resultado = C - A;
+			else if (b < a && b < c) {
+				pequetin = b;
 			}
-			else if(C > B) {
-				resultado = B - C;
+			else if (c < a && c < b) {
+				pequetin = c;
 			}
+			
+			
+			
 			System.out.println(resultado);
 		}
 	

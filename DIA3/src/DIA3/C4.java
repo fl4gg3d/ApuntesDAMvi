@@ -28,7 +28,7 @@ public class C4 {
 		else if (alumnes > 15 && temperatura > 22 && temperatura <=25 && mandito == "NO") {
 			System.out.println("Obrir Finestra");
 		}
-		else if (alumnes >15 && temperatura > 18 && mandito == "SI" || mandito == "NO") {
+		else if (alumnes >15 && temperatura > 18) {
 			System.out.println("Obrir Finestra");
 		}
 		else {

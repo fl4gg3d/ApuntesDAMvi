@@ -1,22 +1,18 @@
 package Goofy;
 
-import java.util.Scanner;
 
 public class hello {
 
 	public static void main(String[] args) {
 		
-		String HelloWorld = "HelloWorld";
+		String HelloWorld = "System.out.println(\\\"HelloWorld\\\")";
 		
-		int respuesta = 0;
-		
-		Scanner sc = new Scanner(System.in);
-		String Hello = sc.nextLine();
-		
-		System.out.println(HelloWorld);
-		
-		sc.close();
-
+		if ( HelloWorld == "System.out.println(\\\"HelloWorld\\\")") {
+			System.out.println("HelloWorld");
+		}
+		else {
+			System.out.println("No HelloWorld");
+		}
 	}
 
 }
