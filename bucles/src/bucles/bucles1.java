@@ -10,7 +10,7 @@ public class bucles1 {
 			System.out.println("La variable A val:" + a );
 			a++;
 		}
-
+		
 	}
 
 }
