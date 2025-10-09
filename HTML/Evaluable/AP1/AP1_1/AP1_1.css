@@ -1,0 +1,50 @@
+body {
+    width: 60em;
+    margin: 0 auto;
+    display: flex;
+}
+
+section {
+    padding: 2em;
+    margin: 1em;
+}
+
+ul {
+    padding: 0;
+
+}
+
+#orange ul{
+    display: flex;
+}
+
+li {
+    background-color: white;
+    padding: 1em;
+    display: block;
+    margin: 1em;
+}
+
+#blue{
+    background-color: blue;
+    order: 1;
+}
+
+#green{
+    background-color: green;
+    order: 2;
+}
+
+#yellow{
+    background-color: yellow;
+    order: 5;
+}
+
+#orange{
+    background-color: orange;
+    order: 4;
+}
+#red{
+    background-color: red;
+    order: 3;
+}

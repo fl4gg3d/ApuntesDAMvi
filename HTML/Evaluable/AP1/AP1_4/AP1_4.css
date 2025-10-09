@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    border: 3px solid #7a8a94;
+    border-radius: 10%;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+img.avatar {
+    width: 20%;
+    border-radius: 10%;
+}
+.container{
+    margin: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+}
