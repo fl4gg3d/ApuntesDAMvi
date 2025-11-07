@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="AP1_4.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: url("images/Sin 2.jpg") no-repeat center;
+            background-size: 400% 400%;
+            transition: background 1s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Ocultamos el checkbox */
+        #activar {
+            display: none;
+        }
+
+        label {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        label:hover {
+            transform: scale(1.05);
+        }
+
+        /* Fondo animado cuando el checkbox está activado */
+        #activar:checked ~ body {
+            animation: rotarFondo 5s linear 1; /* solo una vez */
+        }
+
+        @keyframes rotarFondo {
+            from { filter: hue-rotate(0deg); }
+            to { filter: hue-rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<form action="" method="post">
+    <div class="imgcontainer">
+        <img src="images/energiaAsequible.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+        <div class="splatoon2">
+        <label for="name"><b>Usuario: </b></label>
+        <input id="name" type="text" placeholder="Como tu te llama" name="uname" required>
+        </div>
+        <div class="splatoon2">
+        <label for="psw"><b>Password: </b></label>
+        <input id="psw" type="password" placeholder="Palabra magica" name="psw" required>
+        </div>
+        <div class="botoncito">
+        <button type="submit">Login</button>
+        </div>
+        <label class="recuerdame">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+    <!-- El “botón” es en realidad una etiqueta que activa el checkbox -->
+    <input type="checkbox" id="activar">
+    <label for="activar">Login</label>
+</form>
+</body>
+</html>

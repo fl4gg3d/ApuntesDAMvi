@@ -1,0 +1,15 @@
+div{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: darkgreen;
+    animation: mover 5s infinite;
+}
+@keyframes mover {
+
+    0%{left: 0; top:0}
+    25%{left: 400px; top: 0}
+    50%{left: 400px; top: 400px}
+    75%{left: 0; top: 400px}
+    100%{left: 0; top: 0}
+}

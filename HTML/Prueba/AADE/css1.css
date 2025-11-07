@@ -1,0 +1,53 @@
+.grid-container {
+    display: grid;
+    /*grid gap, separacio INTERNA edl grid, vertical horitzontal*/
+    grid-gap: 10px 10px;
+    /*color de la separacio*/
+    background-color: #2196F3;
+    /*padding, separacio EXTERNA del grid*/
+    padding: 10px;
+    /*grid-template-columns, especifiques el tamany de les n columnes que vols posar */
+    /*grid-template-columns: 20% 30% 30% 20%*/
+    /*pots fer servir fr , de fraccio, per a "repartir l'espai que queda"*/
+    grid-template-columns: 50px 2fr 4fr 10%;
+    grid-template-rows: 1fr 2fr 2fr;
+}
+
+.grid-item {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.item1 {
+    background-color: #038210;
+    grid-column: 1 / -1;
+    
+}
+.item5{
+    background-color: #06088f;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+.item3 {
+    background-color: #e2d300;
+    grid-row: 3 / 5;
+    grid-column: 2 / 3;
+}
+.item6 {
+    background-color: #c6135b;
+    grid-row: 2 / 3;
+}
+.item4{
+    background-color: #b000c0;
+    grid-row: 3 / 5;
+    grid-column: 3 / 5;
+}
+.item2 {
+    background-color: #b80606;
+    grid-row: 2 / 4;
+}
+.item2 {
+    background-color: #b80606;
+    grid-row: 2 / 4;
+}

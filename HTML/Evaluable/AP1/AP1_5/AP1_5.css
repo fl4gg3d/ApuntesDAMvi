@@ -4,8 +4,9 @@ body{
     justify-content: center;
     align-items: center;
     font-family: "Comic Sans MS", serif;
-    background: url("images/Sin 2.jpg") no-repeat center;
+    background: url("images/Sin 2.jpg")no-repeat fixed;
     background-size: cover;
+    height: 100%;
 }
 
 form{
@@ -55,4 +56,12 @@ img.avatar {
 }
 .recuerdame{
     background-color: blueviolet;
+}
+@media (max-width: 600px) {
+    .splatoon2{
+        flex-direction: column;
+    }
+    .form{
+        flex-direction: row;
+    }
 }
