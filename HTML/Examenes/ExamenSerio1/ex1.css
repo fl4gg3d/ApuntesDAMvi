@@ -1,0 +1,19 @@
+table {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 5px hotpink solid;
+}
+a{
+    text-decoration: none;
+}
+th{
+    background: black;
+    color: white;
+}
+td{
+    color: black;
+    border: 3px hotpink solid;
+    font-size: 2em;
+}
