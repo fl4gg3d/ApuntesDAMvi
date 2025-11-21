@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<liga>
+  <equipo codi="TeamNigga">
+      <entrenador>
+        <nom>Rosa</nom>
+        <cognom>Melano</cognom>
+        <segonCognom></segonCognom>
+        <nacionalitat>Española</nacionalitat>
+      </entrenador>
+      <jugador internacional="True">
+          <nom>Jonny</nom>
+          <cognom>Melavo</cognom>
+          <segonCognom>Elano</segonCognom>
+          <dorsal>67</dorsal>
+          <posicio>Delantero</posicio>
+      </jugador>
+      <estadi>
+        <nom>Nigger Mango Stadium</nom>
+        <anyConstruccio>1870</anyConstruccio>
+        <capacitat>667</capacitat>
+      </estadi>
+  </equipo>
+</liga>
