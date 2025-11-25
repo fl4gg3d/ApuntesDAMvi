@@ -19,9 +19,14 @@ public class ColarSe {
 			for (int j = 0; j < nums; j++) {
 				llistaInt.add(sc.nextInt());				
 			}
+			int numAdd = sc.nextInt();
+			int posicio = sc.nextInt();
 			
+			llistaInt.add(posicio,numAdd);
 			
-			
+			for(Integer numero : llistaInt) {
+				System.out.print(numero + " ");
+			}
 		}
 		
 		
