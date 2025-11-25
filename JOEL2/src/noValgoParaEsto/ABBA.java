@@ -12,6 +12,8 @@ public class ABBA {
 		
 		for(int i = 0; i < casos; i++) {
 			
+			String noms = sc.nextLine();
+			
 			
 			
 		}
