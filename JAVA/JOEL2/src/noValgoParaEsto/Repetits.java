@@ -18,10 +18,16 @@ public class Repetits {
 			}
 			for (int j = 0; j < llargLlista; j++) {
 				for (int j2 = 0; j2 < j; j2++) {
-					
-				}
+					if(llistaInt.get(j)==llistaInt.get(j2)) {
+						repetido = true;
+						}
+					}
 			}
-			
+			if(repetido) {
+				System.out.println("SI");
+			} else {
+				System.out.println("NO");
+			}
 		}
 		
 		
