@@ -1,0 +1,64 @@
+{
+    "equipos":[
+        {
+            "nombre":"AfricaTeam",
+            "estadio":{
+                "nombre":"KatumpaStadium",
+                "capacidad":50000,
+                "anyoInauguracion":1998
+            },
+            "entrenador":{
+                "nombre": "KakiTumKatumpa",
+                "nacionalidad": "Tanzano"
+            },
+            "jugadores":[
+                {
+                    "nombre": "Abatukum",
+                    "apellidos": ["Nauw", null],
+                    "dorsal": 67,
+                    "posicion": "defensa"
+                },
+                {
+                    "nombre": "Kakitum",
+                    "apellidos": ["Katumpa", null],
+                    "dorsal": 10,
+                    "posicion": "portero"
+                }
+                {
+                    "nombre": "Tumkat",
+                    "apellidos": ["Katumpa", "Nauw"],
+                    "dorsal": 9,
+                    "posicion": "delantero"
+                }
+            ]
+        },
+        {
+            "nombre": "RaceAriaFC",
+            "estadio":{
+                "nombre": "AutzwitchStadiumArena",
+                "capacidad":1250000,
+                "anyoInauguracion":1945
+            },
+            "entrenador": {
+                "nombre": "Adolfo H. Autzwitch",
+                "nacionalidad": "Aleman"
+            },
+            "jugadores":[
+                {
+                    "nombre":"Hail",
+                    "apellidos":["Berlin", null],
+                    "dorsal":1,
+                    "posicion":"portero"
+                },
+                {
+                    "nombre":"Hitler",
+                    "apellidos":["Frankfurt", null],
+                    "dorsal":7,
+                    "posicion":"delantero"
+                }
+            ]
+
+
+        }
+    ]
+}
