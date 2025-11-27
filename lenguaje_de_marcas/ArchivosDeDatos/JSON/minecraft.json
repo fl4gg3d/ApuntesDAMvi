@@ -1,0 +1,139 @@
+{
+    "mobs":[
+        {
+            "name":"Zombie",
+            "type":"hostile",
+            "health":20,
+            "armor":2,
+            "attack":5,
+            "speed_movement":1.0,
+            "spawn_time": "night",
+            "spawn_light_level":7,
+            "spawn_biomes":["plains","forest","swamp"],
+            "":"",
+            "special_abilities":[
+                {
+                "name":"Infectious Bite",
+                "description":"Chance to inflict 'Hunger' status effect on player for 10 seconds.",
+            },
+            {
+                "name": "break_door",
+                "description": "Can break wooden doors to reach the player.",
+            }
+            ],
+            "drops":[
+                {
+                "item":"rotten_flesh",
+                "quantity": [1,2],
+                "chance":"common",
+                "special_conditions":[null]
+            },
+            {
+                "item":"iron_ingot",
+                "quantity": [1,1],
+                "chance":"rare",
+                "special_conditions":["if killed by player"]
+            }
+            ]
+        }
+        {
+            "name":"Iron Golem",
+            "type":"neutral",
+            "health":100,
+            "armor":5,
+            "attack": 15,
+            "speed_movement":0.5,
+            "spawn_time": "day",
+            "spawn_light_level":15,
+            "spawn_biomes":["village","plains"],
+            "special_abilities":[{
+                "name":"Infectious Bite",
+                "description":"Chance to inflict 'Hunger' status effect on player for 10 seconds.",
+            },
+            {
+                "name": "break_door",
+                "description": "Can break wooden doors to reach the player.",
+            }
+            ],
+            "drops":[
+                {
+                "item":"iron_ingot",
+                "quantity": [1,3],
+                "chance":"common",
+                "special_conditions":[null]
+            },
+            {
+                "item":"poppy",
+                "quantity": [1,1],
+                "chance":"rare",
+                "special_conditions":[null]
+            }
+            ]
+        }
+        {
+            "name":"Enderman",
+            "type":"hostile",
+            "health":40,
+            "armor":0,  
+            "attack":10,
+            "speed_movement":1.2,
+            "spawn_time": "night",
+            "spawn_light_level":7,
+            "spawn_biomes":["forest","plains","desert"],
+            "special_abilities":[
+                {
+                "name":"Teleportation",
+                "description":"Can teleport to avoid damage or reach the player quickly.",
+            },
+            {
+                "name": "block_pickup",
+                "description": "Can pick up and place certain blocks.",
+            }
+            ],
+            "drops":[
+                {
+                "item":"ender_pearl",
+                "quantity": [1,2],
+                "chance":"common",
+                "special_conditions":[null]
+            },
+            {
+                "item":"carved_pumpkin",
+                "quantity": [1,1],
+                "chance":"rare",
+                "special_conditions":["if killed by player using a sword enchanted with Looting III"]
+            }
+            ]
+        }
+        {
+            "name":"Creeper",
+            "type":"hostile",
+            "health":20,
+            "armor":0,
+            "attack":15,
+            "speed_movement":1.0,
+            "spawn_time": "night",
+            "spawn_light_level":7,
+            "spawn_biomes":["plains","forest","desert"],
+            "special_abilities":[{
+                "name":"Self-Destruct",
+                "description":"Explodes when in close proximity to the player, causing area damage.",
+            }
+            ],
+            "drops":[
+                {
+                "item":"gunpowder",
+                "quantity": [1,3],
+                "chance":"common",
+                "special_conditions":[null]
+            },
+            {
+                "item":"music_disc",
+                "quantity": [1,1],
+                "chance":"very_rare",
+                "special_conditions":["if killed by a skeleton's arrow"]
+            }
+            ]
+        }
+    ]
+}
