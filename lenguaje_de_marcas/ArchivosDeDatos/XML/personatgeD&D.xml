@@ -1,7 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<personatgeD&D type= HalflingRogue_10>
+<personatgeD&D type= "HalflingRogue_10">
     <nom>Pablo Motos</nom>
+    <abilityScores>
+        <STR bonus="+0">10</STR>
+        <DEX bonus="+5">20</DEX>
+        <CON bonus="+2">14</CON>
+        <INT bonus="+3">16</INT>
+        <WIS bonus="+1">12</WIS>
+        <CHA bonus="-1">9</CHA>
+    </abilityScores>
     <stats>
         <armorClass>17</armorClass>
+        <hitPoints>73</hitPoints>
+        <speed>25</speed>
     </stats>
+    <background background_type= "Criminal"> 
+        <feature>Criminal Contact</feature>
+        <faction>Harpers</faction>
+        <trait></trait>
+        <ideal></ideal>
+        <bond></bond>
+        <flaw></flaw>
+    </background>
+    <profencies bonus="+4">
+        <savingThows>
+            <name bonus="9">Dexterity</name>
+            <name bonus="7">Intelligence</name>
+        </savingThows>
+        <skills>
+            <name bonus="9">Acrobatics</name>
+            <name bonus="3">Deception</name>
+            <name bonus="11">Investigation</name>
+            <name bonus="9">Perception</name>
+            <name bonus="9">Sleight of Hand</name>
+            <name bonus="13">Stealth</name>
+        </skills>
+        <tools>
+            <name bonus="+8">Thieves' Tools</name>
+        </tools>
+        <weapon>
+            <name>Simple Weapons</name>
+            <name>Hand Crossbows</name>
+            <name>Longswords</name>
+            <name>Rapiers</name>
+            <name>Shortswords</name>
+        </weapon>
+        <armor>
+            <name>Light Armor</name>
+        </armor>
+        <senses>
+            <name>Passive (Perception) 19</name>
+        </senses>
+        <languages>
+            <name>Common</name>
+            <name>Halfling</name>
+            <name>Thieves' Cant</name>
+        </languages>
+    </profencies>
+    <features type="Rogue Features">
+        <feature>
+            <name>Cunning Action</name>
+            <description>You can take a bonus action on each of your turns in combat, only to take the Dash, Disengage, or Hide action</description>
+        </feature>
+        <feature>
+            <name>Roguish Archetype: Thief</name>
+            <description>Fast Hands: Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action. Second-Story Work: When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement. In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.</description>
+        </feature>
+        <feature>
+            <name>Fast Hands</name>
+            <description>You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves tools to disarm a trap or open a lock, or take the Use an Object action.</description>
+        </feature>
+        <feature>
+            <name>Evasion</name>
+            <description>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you Halfling Rogue 10 “Could you keep the screaming down a bit? I’m kinda busy here.” You’re completely self-sufficient. If you need something, you take it. If someone else has it, they don’t anymore. Necessity trumps silly laws of possession. You weren’t a desperate orphan, scratching out a living on the mean streets. Neither were you a noble poser, slumming for excitement. No, you are a master of adaptation to your environment—be it urban, dungeon, or the wild. Background (Criminal) You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You have survived up to this point by flouting the rules and regulations of society. Your expertise is burglary. You are unmatched at getting into tight spaces and locked rooms, and getting back out again richer and none the worse. Criminal Contact. You have a reliable and trustworthy contact who acts as your liaison to a loose network of other criminals. (This is not a formal organization like the Zhentarim.) You know how to get messages to and from your contact, even over great distances, using local messnegers, corrupt caravan masters, and seedy sailors. Faction. You are a member of the Harpers, a clandestine network of spellcasters and spies that seeks to tip the scales in favor of the innocent, the weak, and the poor. Personality Trait. You are always calm, no matter what the situation. Ideal. Everyone should be free to pursue his or her own livelihood. Bond. You are loyal to your friends, not to any ideals. Flaw. When you see something valuable, you can’t think of anything but how to steal it. Halfling Traits Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours. Lucky. When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. succeed on the saving throw, and only half damage if you fail.</description>
+        </feature>
+    </features>
+    <actions>
+        <action>
+            <actionName>Shortsword</actionName>
+            <actionType>Melee Weapon Attack</actionType>
+            <actionBonus>+8 to hit</actionBonus>
+            <actionReach>5 ft.</actionReach>
+            <actionTarget>one target</actionTarget>
+            <actionDamage>1d6+5 piercing damage</actionDamage>
+        </action>
+        <action>
+            <actionName>Shortbow</actionName>
+            <actionType>Ranged Weapon Attack</actionType>
+            <actionBonus>+9 to hit</actionBonus>
+            <actionRange>80/320 ft.</actionRange>
+            <actionTarget>one target</actionTarget>
+            <actionDamage>1d6+5 piercing damage</actionDamage>
+        </action>
+        <action>
+            <actionName>Dagger</actionName>
+            <actionType>Melee or Ranged Weapon Attack</actionType>
+            <actionBonus>+8 to hit</actionBonus>
+            <actionReach>5 ft. or 20/60 ft.</actionReach>
+            <actionTarget>one target</actionTarget>
+            <actionDamage>1d4+5 piercing damage</actionDamage>
+        </action>
+    </actions>
+    <bonusActions>
+        <actionName type="Rogue Feature">
+            <name>Cunning Action</name>
+            <description>On each of your turns, you can use a bonus action to take the Dash, Disengage, or Hide action.</description>
+        </actionName>
+        <actionName>
+            <name>Two-Weapon Fighting</name>
+            <description>When you take the Attack action with a shortsword in one hand, you can use a bonus action to attack with a dagger in the other hand. You don’t add your ability modifier to the damage of the bonus attack. You can instead throw the dagger instead of making a melee attack with it.</description>
+        </actionName>
+    </bonusActions>
+
 </personatgeD>
