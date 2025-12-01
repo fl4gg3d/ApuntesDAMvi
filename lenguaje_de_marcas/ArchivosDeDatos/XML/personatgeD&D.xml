@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<personatgeD&D type= "HalflingRogue_10">
+<personatgeDYD type= "HalflingRogue_10">
     <nom>Pablo Motos</nom>
     <abilityScores>
         <STR bonus="+0">10</STR>
@@ -17,10 +17,9 @@
     <background background_type= "Criminal"> 
         <feature>Criminal Contact</feature>
         <faction>Harpers</faction>
-        <trait></trait>
-        <ideal></ideal>
-        <bond></bond>
-        <flaw></flaw>
+        <ideal>Everyone should be free to pursue his or her own livelihood.</ideal>
+        <bond>You are loyal to your friends, not to any ideals</bond>
+        <flaw>When you see something valuable, you cant think of anything but how to steal it.</flaw>
     </background>
     <profencies bonus="+4">
         <savingThows>
@@ -57,24 +56,62 @@
             <name>Thieves' Cant</name>
         </languages>
     </profencies>
-    <features type="Rogue Features">
-        <feature>
+    <features>
+        <feature type="Rogue Features">
             <name>Cunning Action</name>
             <description>You can take a bonus action on each of your turns in combat, only to take the Dash, Disengage, or Hide action</description>
         </feature>
-        <feature>
+        <feature type="Rogue Features">
             <name>Roguish Archetype: Thief</name>
             <description>Fast Hands: Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action. Second-Story Work: When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement. In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.</description>
         </feature>
-        <feature>
+        <feature type="Rogue Features">
             <name>Fast Hands</name>
             <description>You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves tools to disarm a trap or open a lock, or take the Use an Object action.</description>
         </feature>
-        <feature>
+        <feature type="Rogue Features">
             <name>Evasion</name>
-            <description>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you Halfling Rogue 10 “Could you keep the screaming down a bit? I’m kinda busy here.” You’re completely self-sufficient. If you need something, you take it. If someone else has it, they don’t anymore. Necessity trumps silly laws of possession. You weren’t a desperate orphan, scratching out a living on the mean streets. Neither were you a noble poser, slumming for excitement. No, you are a master of adaptation to your environment—be it urban, dungeon, or the wild. Background (Criminal) You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You have survived up to this point by flouting the rules and regulations of society. Your expertise is burglary. You are unmatched at getting into tight spaces and locked rooms, and getting back out again richer and none the worse. Criminal Contact. You have a reliable and trustworthy contact who acts as your liaison to a loose network of other criminals. (This is not a formal organization like the Zhentarim.) You know how to get messages to and from your contact, even over great distances, using local messnegers, corrupt caravan masters, and seedy sailors. Faction. You are a member of the Harpers, a clandestine network of spellcasters and spies that seeks to tip the scales in favor of the innocent, the weak, and the poor. Personality Trait. You are always calm, no matter what the situation. Ideal. Everyone should be free to pursue his or her own livelihood. Bond. You are loyal to your friends, not to any ideals. Flaw. When you see something valuable, you can’t think of anything but how to steal it. Halfling Traits Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours. Lucky. When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. succeed on the saving throw, and only half damage if you fail.</description>
+            <description>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you Halfling Rogue 10 “Could you keep the screaming down a bit? I’m kinda busy here.” You’re completely self-sufficient. If you need something, you take it. If someone else has it, they dont anymore. Necessity trumps silly laws of possession. You werent a desperate orphan, scratching out a living on the mean streets. Neither were you a noble poser, slumming for excitement. No, you are a master of adaptation to your environment—be it urban, dungeon, or the wild. Background (Criminal) You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You have survived up to this point by flouting the rules and regulations of society. Your expertise is burglary. You are unmatched at getting into tight spaces and locked rooms, and getting back out again richer and none the worse. Criminal Contact. You have a reliable and trustworthy contact who acts as your liaison to a loose network of other criminals. (This is not a formal organization like the Zhentarim.) You know how to get messages to and from your contact, even over great distances, using local messnegers, corrupt caravan masters, and seedy sailors. Faction. You are a member of the Harpers, a clandestine network of spellcasters and spies that seeks to tip the scales in favor of the innocent, the weak, and the poor. Personality Trait. You are always calm, no matter what the situation. Ideal. Everyone should be free to pursue his or her own livelihood. Bond. You are loyal to your friends, not to any ideals. Flaw. When you see something valuable, you cant think of anything but how to steal it. Halfling Traits Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours. Lucky. When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. succeed on the saving throw, and only half damage if you fail.</description>
+        </feature>
+        <feature type="Rogue Features">
+            <name>Second-Story Work</name>
+            <description>Climbing does not cost you extra movement. In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier</description>
+        </feature>
+        <feature type="Rogue Features">
+            <name>Sneak Attack</name>
+            <description>Once per turn, you can deal an extra 5d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isnt incapacitated, and you dont have disadvantage on the attack roll.</description>
+        </feature>
+        <feature type="Rogue Features">
+            <name>Supreme Sneak</name>
+            <description>You have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.</description>
+        </feature>
+        <feature type="Rogue Features">
+            <name>Uncanny Dodge</name>
+            <description>When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.</description>
         </feature>
     </features>
+    <traits>
+        <trait type="Halfling Trait">
+            <name>Halfling Nimbleness</name>
+            <description>You can move through the space of any creature that is of a size larger than yours.</description>
+        </trait>
+        <trait type="Halfling Trait">
+            <name>Lucky</name>
+            <description>When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</description>
+        </trait>
+        <trait type="Halfling Trait">
+            <name>Brave</name>
+            <description>You have advantage on saving throws against being frightened.</description>
+        </trait>
+        <trait type="Halfling Trait">
+            <name>Naturally Stealthy</name>
+            <description>You can attempt to hide even when you are obscured by a creature that is at least one size larger than you.</description>
+        </trait>
+        <trait type="Personality Trait">
+            <name>Personality Trait</name>
+            <description>You are always calm, no matter what the situation.</description>
+        </trait>
+    </traits>
     <actions>
         <action>
             <actionName>Shortsword</actionName>
@@ -104,12 +141,11 @@
     <bonusActions>
         <actionName type="Rogue Feature">
             <name>Cunning Action</name>
-            <description>On each of your turns, you can use a bonus action to take the Dash, Disengage, or Hide action.</description>
+            <description>You can take a bonus action on each of your turns in combat, only to take the Dash, Disengage, or Hide action.</description>
         </actionName>
         <actionName>
             <name>Two-Weapon Fighting</name>
             <description>When you take the Attack action with a shortsword in one hand, you can use a bonus action to attack with a dagger in the other hand. You don’t add your ability modifier to the damage of the bonus attack. You can instead throw the dagger instead of making a melee attack with it.</description>
         </actionName>
     </bonusActions>
-
-</personatgeD>
+</personatgeDYD>
