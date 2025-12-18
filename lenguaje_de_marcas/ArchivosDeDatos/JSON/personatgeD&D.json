@@ -1,3 +1,161 @@
 {
-    
+    "personajes":[
+        {
+            "type": "HalflingRogue_10",
+            "name": "Pablo Motos",
+            "abilityScores": [
+                {
+                    "name": "STR",
+                    "value": 10,
+                    "modifier": 0
+                }
+                {
+                    "name": "DEX",
+                    "value": 20,
+                    "modifier": 5
+                },
+                {
+                    "name": "CON",
+                    "value": 14,
+                    "modifier": 2
+                },
+                {
+                    "name": "INT",
+                    "value": 16,
+                    "modifier": 3
+                },
+                {
+                    "name": "WIS",
+                    "value": 12,
+                    "modifier": 1
+                },
+                {
+                    "name": "CHA",
+                    "value": 9,
+                    "modifier": -1
+                }
+            ],
+            "stats":{
+                "AC": 17,
+                "HP": 73,
+                "Speed": 25
+            },
+            "background": {
+                "type": "Criminal",
+                "feature": "Criminal Contact",
+                "faction": "Harpers",
+                "trait": null,
+                "ideal": null,
+                "bond": null,
+                "flaw": null
+            },
+            "profencies":{
+                "modifier": 4,
+                "savingThrows": [
+                    {
+                        "name": "Dexterity", 
+                        "modifier": 9
+                    },
+                    {
+                        "name": "Intelligence",
+                        "modifier": 7
+                    }
+                ],
+                "skills": [
+                    {
+                        "name": "Stealth", 
+                        "modifier": 13
+                    },
+                    {
+                        "name": "Acrobatics", 
+                        "modifier": 9
+                    },
+                    {
+                        "name": "Deception", 
+                        "modifier": 3
+                    },
+                    {
+                        "name": "Investigation", 
+                        "modifier": 11
+                    },
+                    {
+                        "name": "Perception", 
+                        "modifier": 9
+                    },
+                    {
+                        "name": "Sleight of Hand", 
+                        "modifier": 9
+                    }
+                ],
+                "tools": [
+                    {
+                        "name": "Thieves' Tools", 
+                        "modifier": 8
+                    }],
+                "weapons": ["Simple Weapons", "Rapier", "Shortsword", "Hand Crossbow", "LongSword"],
+                "armor": ["Light Armor"],
+                "senses": ["Passive Perception 19"],
+                "languages": ["Common", "Halfling", "Thieves' Cant"]
+            },
+            "features":{
+                "type": "RogueFeatures",
+                "featuresList": [
+                    {
+                        "name": "Cunning Action",
+                        "description": "You can take a bonus action on each of your turns in combat to Dash, Disengage, or Hide."
+                    },
+                    {
+                        "name":"Roguish Archetype: Thief",
+                        "description": "Fast Hands: Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action. Second-Story Work: When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement. In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier."
+                    },
+                    {
+                        "name": "Evansion",
+                        "description" : "When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you Halfling Rogue 10 “Could you keep the screaming down a bit? I’m kinda busy here.” You’re completely self-sufficient. If you need something, you take it. If someone else has it, they don’t anymore. Necessity trumps silly laws of possession. You weren’t a desperate orphan, scratching out a living on the mean streets. Neither were you a noble poser, slumming for excitement. No, you are a master of adaptation to your environment—be it urban, dungeon, or the wild. Background (Criminal) You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You have survived up to this point by flouting the rules and regulations of society. Your expertise is burglary. You are unmatched at getting into tight spaces and locked rooms, and getting back out again richer and none the worse. Criminal Contact. You have a reliable and trustworthy contact who acts as your liaison to a loose network of other criminals. (This is not a formal organization like the Zhentarim.) You know how to get messages to and from your contact, even over great distances, using local messnegers, corrupt caravan masters, and seedy sailors. Faction. You are a member of the Harpers, a clandestine network of spellcasters and spies that seeks to tip the scales in favor of the innocent, the weak, and the poor. Personality Trait. You are always calm, no matter what the situation. Ideal. Everyone should be free to pursue his or her own livelihood. Bond. You are loyal to your friends, not to any ideals. Flaw. When you see something valuable, you can’t think of anything but how to steal it. Halfling Traits Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours. Lucky. When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. succeed on the saving throw, and only half damage if you fail."
+                    },
+                    {
+                        "name": "Fast Hands",
+                        "description": "You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves tools to disarm a trap or open a lock, or take the Use an Object action."
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "name": "Shortsword",
+                    "type": "Melee Weapon Attack",
+                    "bonus": "+9 to hit",
+                    "reach": "5 ft.",
+                    "target": "one target",
+                    "hit": "1d6 + 5 piercing damage."
+                },
+                {
+                    "name": "ShortBow",
+                    "type": "Ranged Weapon Attack",
+                    "bonus": "+9 to hit",
+                    "reach": "80/320 ft.",
+                    "target": "one target",
+                    "hit": "1d6 + 5 piercing damage."
+                },
+                {
+                    "name": "Dagger",
+                    "type": "Melee or Ranged Weapon Attack",
+                    "bonus": "+8 to hit",
+                    "reach": "5 ft. or 20/60 ft.",
+                    "target": "one target",
+                    "hit": "1d4 + 5 piercing damage."
+                }
+            ],
+            "bonusActions": [
+                {
+                    "name":"Cunning Action",
+                    "type":"Rogue Feature",
+                    "description":"On each of your turns, you can use a bonus action to take the Dash, Disengage, or Hide action."
+                },
+                {
+                    "name":"Two-Weapon Fighting",
+                    "type": null,
+                    "description":"When you take the Attack action with a shortsword in one hand, you can use a bonus action to attack with a dagger in the other hand. You don’t add your ability modifier to the damage of the bonus attack. You can instead throw the dagger instead of making a melee attack with it."
+                }
+            ]
+        }
+    ]
 }
