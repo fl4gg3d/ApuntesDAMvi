@@ -1,0 +1,77 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor details */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Ocultamos la flecha por defecto */
+.menu summary {
+    list-style: none;
+}
+.menu summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Botón summary */
+.menu-btn {
+    background: #111;
+    color: #fff;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+/* Cuando details está abierto */
+.menu[open] .menu-content {
+    transform: translateX(0);
+}
+
+/* Links del menú */
+.menu-content a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.menu-content a:hover {
+    background: #444;
+}
+/* Botón summary siempre visible */
+.menu-btn {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background: #111;
+    color: #fff;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+/* Menú deslizante */
+.menu-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #222;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 500;
+}

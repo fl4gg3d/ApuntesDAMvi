@@ -21,8 +21,15 @@ public class Notes1 {
 					notas[j][j2] = sc.nextInt();
 				}
 			}
-			int conta = 0;
-			
+			int cont = 0;
+			for (int j = 0; j < notas.length; j++) {
+				int suma = 0;
+				for (int j2 = 0; j2 < notas[0].length; j2++) {
+					suma +=	notas[cont][j2];
+				}
+				System.out.print(suma / colum + " ");
+				cont++;
+			}
 		}
 	}
 }

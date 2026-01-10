@@ -1,0 +1,23 @@
+body {
+    font-family: "Yu Gothic Medium", serif;
+    height: 100vh;
+    background-size: 100% 100vh;
+    background: linear-gradient(171deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%) fixed;
+}
+nav{
+    background-color: #0a53be;
+}
+ul{
+    font-size: 20px;
+    list-style: none;
+}
+ul li{
+    border-radius: 5px;
+    border: 1px black solid;
+    margin: 30px;
+    padding: 10px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
