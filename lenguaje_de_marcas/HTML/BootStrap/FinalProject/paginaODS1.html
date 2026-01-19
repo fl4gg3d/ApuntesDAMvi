@@ -2,9 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Salud y Bienestar</title>
+    <link rel="stylesheet" href="css/CSSpODS.css">
+    <link rel="stylesheet" href="css_BootStrap/bootstrap.css">
 </head>
-<body>
+<body class="bgODS1">
+<!--navbar que porfin he conseguido que este bien centrada. COPIAR EN CASO DE NECESITAR EN OTRO LADO-->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">ODS</a>
+        <ul class="menu navbar-nav justify-content-end">
+            <li><a href="Login.html">Iniciar Sesion</a></li>
+            <li><a href="paginaODS2f.html">ODS 2</a></li>
+        </ul>
+    </div>
+</nav>
 
+<div class="container mt-5 bg-Principal prueba">
+
+    <div class="d-flex justify-content-center mb-5"><img class="w-25" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Sustainable_Development_Goal-es-15.jpg"></div>
+
+    <h1 class="text-center mb-4 text-white">Salud y Bienestar</h1>
+
+    <p class="text-center text-white">
+        El <strong>Objetivo de Desarrollo Sostenible 3</strong> tiene como finalidad garantizar una vida sana y promover el bienestar para todas las personas en todas las edades. Se centra en mejorar el acceso a los servicios de salud, prevenir enfermedades, reducir la mortalidad y promover la salud mental y los hábitos de vida saludables.
+    </p>
+
+    <!--https://getbootstrap.com/docs/5.0/components/card/-->
+    <!--Sinceramene esto lo he visto de una pagina web de ejemplo, por lo menos es simple y lo entiendo. COPIAR EN CASO DE NECESITAR EN OTRO LADO -->
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Acceso a la salud</h5>
+                    <p class="card-text">
+                        Garantizar que todas las personas tengan acceso a servicios médicos de calidad, incluidos medicamentos y atención básica.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Prevención de enfermedades</h5>
+                    <p class="card-text">
+                        Reducir enfermedades prevenibles mediante vacunación, educación sanitaria y hábitos de vida saludables.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Salud mental y bienestar</h5>
+                    <p class="card-text">
+                        Promover el cuidado de la salud mental, reduciendo el estrés, la ansiedad y mejorando la calidad de vida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h2 class="text-center mt-5 text-white">Estadísticas Globales</h2>
+    <!-- Tablas = Dolor de cabeza, nose porque se me rompe la pagina everytime -->
+    <div class="table-responsive mt-4">
+        <table class="table table-striped table-bordered text-center align-middle">
+            <thead class="table-dark">
+            <tr>
+                <th>Indicador</th>
+                <th>Descripción</th>
+                <th>Dato Global</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Esperanza de vida</td>
+                <td>Años promedio de vida al nacer</td>
+                <td>73 años</td>
+            </tr>
+            <tr>
+                <td>Mortalidad infantil</td>
+                <td>Muertes por cada 1.000 nacidos vivos</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>Acceso a servicios de salud</td>
+                <td>Población con atención sanitaria básica</td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td>Enfermedades prevenibles</td>
+                <td>Muertes evitables con vacunación</td>
+                <td>2 millones/año</td>
+            </tr>
+            <tr>
+                <td>Salud mental</td>
+                <td>Población con trastornos mentales</td>
+                <td>13%</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+<!--Esta bien supongo, aunque no se como ponerlo bien y no consigo que este al fondo de la pagina-->
+<footer class="text-center mt-5 p-3 text-white bg-dark">
+    <p>Ruben Agustín</p>
+</footer>
+<!--Me gusta poner comentarios se siente profesional-->
 </body>
 </html>

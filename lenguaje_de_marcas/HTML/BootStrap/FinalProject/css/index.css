@@ -1,23 +1,70 @@
 body {
-    font-family: "Yu Gothic Medium", serif;
+    background: black;
+}
+/*Con esto hacemos que la imagen del principio pos sea una parte y no toda, la verdad que ha costado*/
+.header {
     height: 100vh;
-    background-size: 100% 100vh;
-    background: linear-gradient(171deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%) fixed;
-}
-nav{
-    background-color: #0a53be;
-}
-ul{
-    font-size: 20px;
-    list-style: none;
-}
-ul li{
-    border-radius: 5px;
-    border: 1px black solid;
-    margin: 30px;
-    padding: 10px;
-}
-a {
+    background-image: url("https://www.tendencias21.es/photo/art/grande/24383891-26248603.jpg?v=1533667222");
+    background-size: cover;
+    background-position: center;
     color: white;
+    position: relative;
+}
+.navbar {
+    background: transparent;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+}
+.logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: none;
+    color: white;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 0;
+}
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+.botonPrincipal {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.PrimeraVista {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+}
+.PrimeraVista h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+iframe{
+    border-radius: 16px;
+}
+.ODS{
+    width: 50vh;
+    display: flex;
+}
+.texto {
+    font-size: 20px;
+    color: white;
+    font-family: "Calibri", sans-serif;
+}
+h2 {
+    font-size: 35px;
+    color: white;
 }

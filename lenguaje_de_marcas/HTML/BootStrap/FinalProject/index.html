@@ -7,22 +7,48 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<div >
-    <nav>
 
-       <!-- <details>
-            <summary>Loquete</summary>
-        </details>
-        -->
-
-        <ul class="d-flex p-0 m-0 justify-content-center align-content-center">
-            <li><a href="paginaODS1.html"> ODS 1 </a></li>
-            <li><a href="paginaODS1.html"> ODS 2 </a></li>
-            <li><a href="paginaODS1.html"> ODS 3 </a></li>
-            <li><a href="paginaODS1.html"> ODS 4 </a></li>
-            <li><a href="paginaODS2.html"> ODS 5 </a></li>
+<!--mas o menos copiada de ODS2.html para que funcione, he intentado estructurarlo un poquito mejor-->
+<header class="header">
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">ODS</a></div>
+        <ul class="menu">
+            <li><a class="fw-bold" href="Login.html">Iniciar sesion</a></li>
+            <li><a class="fw-bold" href="paginaODS1.html">ODS 3</a></li>
+            <li><a class="fw-bold" href="paginaODS2f.html">ODS 5</a></li>
         </ul>
     </nav>
-</div>
+
+    <div class="PrimeraVista">
+        <h1>Objetivos de Desarrollo Sostenible</h1>
+        <a href="#TextoInicio" class="botonPrincipal">Más información</a>
+    </div>
+</header>
+    <!--CENTRADO RARO-->
+    <div class="d-flex align-items-center pt-5">
+        <div class="mt-3 col p-5">
+            <h2 id="TextoInicio">Que son els ODS</h2>
+            <p class="texto">
+                Els ODS són els Objectius de Desenvolupament Sostenible (Objectius de Desenvolupament Sostenible), un conjunt de 17 objectius globals aprovats per les Nacions Unides l’any 2015.
+                Tenen com a finalitat millorar la vida de les persones i protegir el planeta abans de l’any 2030, abordant reptes com la pobresa, la desigualtat, el canvi climàtic, l’educació, la salut o la igualtat de gènere.
+                Els ODS impliquen governs, empreses, entitats i ciutadania, i promouen un desenvolupament que sigui econòmicament viable, socialment just i ambientalment sostenible. Són una guia comuna per construir un futur millor per a tothom.
+            </p>
+        </div>
+        <div class="justify-content-center m-auto"><img src="https://comprometidosods.unizar.es/sites/comprometidosods/files/archivos/imagenes/unnamed.png" alt="ruedaODS"></div>
+    </div>
+    <div>
+        <!--NO FUNCIONA LA ANIMACION-->
+        <div>
+            <a  href="paginaODS1.html"><img class="ODS" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Sustainable_Development_Goal-es-15.jpg" alt=""></a>
+            <a  href="paginaODS2f.html"><img class="ODS" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Sustainable_Development_Goal-es-13.jpg" alt=""></a>
+        </div>
+    </div>
+    <!--Video Embed Solucionado. COPIAR EN CASO DE NECESITAR-->
+    <div class="d-flex justify-content-center my-5">
+        <iframe width="1200" height="700" src="https://www.youtube.com/embed/MCKH5xk8X-g"></iframe>
+    </div>
+<footer class="text-center mt-5 p-3 text-white bg-dark">
+    <p>Ruben Agustin</p>
+</footer>
 </body>
 </html>

@@ -1,0 +1,54 @@
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 0;
+}
+nav {
+    background: transparent;
+    backdrop-filter: blur(9px);
+}
+.bgForm {
+    width: 50%;
+    background: transparent;
+    backdrop-filter: blur(5px);
+}
+body{
+    background-image: url("https://pbs.twimg.com/media/Fvd4PD5XgAAHMjY.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.video-background {
+    position: fixed; /* O absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Para que quede detrás del contenido */
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Para que esté encima del video */
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+/*He buscado por internet como hacerlo*/
