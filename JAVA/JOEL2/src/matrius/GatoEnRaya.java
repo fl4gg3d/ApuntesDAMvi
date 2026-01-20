@@ -21,10 +21,8 @@ public class GatoEnRaya {
 					mat[j][j2] = sc.nextInt();
 				}
 			}
-
-			for (int j = 0; j < mat.length; j++) {
-				
-			}
+			
+			
 
 		}
 

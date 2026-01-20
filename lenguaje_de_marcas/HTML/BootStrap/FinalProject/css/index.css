@@ -55,10 +55,6 @@ body {
 iframe{
     border-radius: 16px;
 }
-.ODS{
-    width: 50vh;
-    display: flex;
-}
 .texto {
     font-size: 20px;
     color: white;
