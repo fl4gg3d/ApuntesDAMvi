@@ -21,9 +21,7 @@ if (numPrompt == random) {
 } else {
     console.log("Has fallat")
 }
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+
 
 /*ex2*/
 let num1Prompt = Number(prompt("Indica el numero"));
