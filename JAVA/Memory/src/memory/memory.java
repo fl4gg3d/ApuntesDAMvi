@@ -38,6 +38,13 @@ public class memory {
 
 	}
 
+	
+	private static char[][] boardCreation() {
+		
+		int filas = 
+		
+	}
+	
 	private static void setting() {
 		
 		jugadors jug1 = new jugadors();
@@ -51,6 +58,8 @@ public class memory {
 		if(userSetting == 1) {
 			jug1.nom = sc.nextLine();
 			jug2.nom = sc.nextLine();
+		} else {
+			menu();
 		}
 		
 	}
