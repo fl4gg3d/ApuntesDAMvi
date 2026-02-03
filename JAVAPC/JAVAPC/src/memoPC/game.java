@@ -2,6 +2,7 @@ package memoPC;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class game {
@@ -19,7 +20,6 @@ public class game {
 			String[][] fakeboard = new String[4][4];
 			String[][] realboard = new String[4][4];
 			
-			
 			boolean devMenu = false;
 			boolean sortir = false;
 			
@@ -28,13 +28,12 @@ public class game {
 			while (!sortir) {
 				
 				int userResponse = sc.nextInt();
-				
 				sc.nextLine();
 				
 				switch (userResponse) {
 				case 1:
 					int torn = 0;
-					memory(player1, player2, torn);
+					memory(player1, player2, torn, fakeboard, realboard);
 					break;
 				case 2:
 					setting(player1, player2);
@@ -56,8 +55,10 @@ public class game {
 			}
 		}
 		//JUEGO PRINCIPAL
-		private static void memory(players player1, players player2, int torn) {
+		private static void memory(players player1, players player2, int torn, String[][] fakeboard, String[][] realboard) {
 			
+			rellenarFakeBoard(fakeboard);
+			rellenarRealBoard(realboard);
 			boolean gameReady = true;
 			
 			if (player1.nom == null && player2.nom == null) {
@@ -66,18 +67,70 @@ public class game {
 				player2.nom = sc.nextLine();
 			}
 			while(gameReady) {
-				
 				if(torn == 0) {
+					System.out.println("Turno de " + player1.nom);
+				} else {
+					System.out.println("Turno de " + player2.nom);
+				}
+				MostrarTabla(fakeboard);
+				MostrarTabla(realboard);
+				int[] pos = keyPlay();
+				
+				int f1 = pos[0];
+				int c1 = pos[1];
+				int f2 = pos[2];
+				int c2 = pos[3];
+				
+				fakeboard[f1][c1] = realboard[f1][c1];
+				fakeboard[f2][c2] = realboard[f2][c2];
+				
+				if (realboard[f1][c1].equals(realboard[f2][c2])) {
+					System.out.println("Pareja correcta");
+					
+					if (torn == 0) {
+						player1.puntos++;
+					} else {
+						player2.puntos++;
+					}
 					
 				} else {
 					
+					System.out.println("No es pareja");
+					
+					fakeboard[f1][c1] = "X";
+					fakeboard[f2][c2] = "X";
+					
+					if (torn == 0) {
+						torn = 1;
+					} else {
+						torn = 0;
+					}
 				}
-				
+				for (int i = 0; i < fakeboard.length; i++) {
+					for (int j = 0; j < fakeboard.length; j++) {
+						if (fakeboard[i][j].equals("X")) {
+							
+						} else {
+							gameReady = false;
+							System.out.println("Fin de la partida");
+							
+							if (player1.puntos > player2.puntos) {
+								player1.numVictories++;
+								System.out.println("Guanya el jugador " + player1.nom + " amb " + player1.puntos + " obtinguts");
+							} else if(player1.puntos < player2.puntos){
+								System.out.println("Guanya el jugador " + player2.nom + " amb " + player2.puntos + " obtinguts");
+								player2.numVictories++;
+							} else {
+								System.out.println("Empate");
+							}
+						}
+					}
+				}
+				player1.puntos = 0;
+				player2.puntos = 0;
 			}
-			
 		}
-	
-		//DevMenu
+		//DEV MENU
 		private static void devMode(boolean devMenu, String[][] fakeboard, String[][] realboard) {
 			
 			while(devMenu) {
@@ -107,10 +160,8 @@ public class game {
 					break;
 				}
 			}
-			
-			
 		}
-		//Mostrar tablero
+		//MOSTRAR TABLERO
 		private static void MostrarTabla(String[][] board) {
 			for (int i = 0; i < board.length; i++) {
 				for (int j = 0; j < board[0].length; j++) {
