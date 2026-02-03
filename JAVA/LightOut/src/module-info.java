@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Memory {
+module LightOut {
 }
