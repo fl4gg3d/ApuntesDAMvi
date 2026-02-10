@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello Neca</title>
-    <script src="JSManipulacio/Ex1Dom.js" defer></script>
-    <script src="JSManipulacio/Ex3DOM.js" defer></script>
+    <!--<script src="JSManipulacio/Ex1Dom.js" defer></script>-->
+    <!--<script src="JSManipulacio/Ex3DOM.js" defer></script>-->
+    <script src="JSManipulacio/ex4DOM.js" defer></script>
 </head>
 <body>
 <!------------------------------------------------------->
@@ -38,7 +39,7 @@
 <br>
 <br>
 <br>
-<input type="text" id="textoAñadir">
+<label for="textoAñadir"></label><input type="text" id="textoAñadir">
 <ul id="father2">
     <li>Gestio de residus</li>
     <li>Energies Renova</li>
@@ -50,6 +51,22 @@
 <button onclick="p2()">Afegir ultim element</button>
 <button onclick="remove()">Eliminar primer element</button>
 <button onclick="removeUp()">Eliminar ultim element</button>
+
+<!------------------------------------------------------->
+<br>
+<br>
+<br>
+<br>
+
+<h2>Llista de tasques</h2>
+<label>
+    <input id="input" type="text"/>
+</label>
+<button onclick="buttonAgefir()">Afegir Tasca</button>
+<hr>
+<ul id="llistaTasques"></ul>
+
+
 
 </body>
 </html>
