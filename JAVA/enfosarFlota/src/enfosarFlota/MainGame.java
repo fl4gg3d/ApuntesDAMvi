@@ -25,6 +25,7 @@ public class MainGame {
 
 			switch (inputUserMenu) {
 			case 1:
+				sc.nextLine();
 				mainGame(flotaFalsa, flotaReal, p1);
 				break;
 			case 2:
@@ -42,25 +43,48 @@ public class MainGame {
 		rellenarTableroF(flotaFalsa);
 		rellenarTableroR(flotaReal);
 		mostrarTableroF(flotaFalsa);
+		System.out.println();
+		mostrarTableroF(flotaReal);
 		boolean gameInProgress = true;
 		while(gameInProgress) {
 			sacarPosicion(p1);
 			bombardear(flotaReal, flotaFalsa, p1);
+			p1.movements++;
+			gameInProgress = acaba(flotaReal);
 		}
+		System.out.println("You win!");
+		menu();
+	}
+
+	
+	
+	private static boolean acaba(int[][] flotaReal) {
 		
-		
-		
+		for (int i = 0; i < flotaReal.length; i++) {
+			for (int j = 0; j < flotaReal[0].length; j++) {
+				if(flotaReal[i][j] == 1) {
+					return true;
+				}
+			}
+		}
+		return false;		
 	}
 
 	private static void bombardear(int[][] flotaReal, int[][] flotaFalsa, PlayerInfo p1) {
 		
+		
+		
 		if(flotaReal[p1.posF][p1.posC] == 0) {
 			System.out.println("AGUA!");
-		} else {
-			flotaFalsa[p1.posF][p1.posC] = flotaReal[p1.posF][p1.posC];
-			System.out.println("ENFONSAT!");
-			p1.movements++;
+			mostrarTableroF(flotaReal);
 		}
+		else {
+			flotaFalsa[p1.posF][p1.posC] = flotaReal[p1.posF][p1.posC];
+			flotaReal[p1.posF][p1.posC] = 0;
+			System.out.println("ENFONSAT!");
+			mostrarTableroF(flotaReal);
+		}
+		
 		
 	}
 
@@ -71,8 +95,6 @@ public class MainGame {
 	}
 
 	private static void pasarLetra(PlayerInfo p1, String position) {
-		
-		
 		
 		String[] split = position.split(",");
 		p1.posC = Integer.parseInt(split[0]);
