@@ -1,4 +1,4 @@
-package mokepon2bien;
+package mokepon3;
 
 public class mokCaptura extends mokepon{
 

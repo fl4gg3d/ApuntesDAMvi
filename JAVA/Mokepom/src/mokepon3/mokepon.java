@@ -1,4 +1,4 @@
-package mokepon2bien;
+package mokepon3;
 
 import java.util.ArrayList;
 import java.util.Random;
