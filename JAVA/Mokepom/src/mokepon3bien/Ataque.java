@@ -1,4 +1,4 @@
-package mokepon3;
+package mokepon3bien;
 
 public class Ataque {
 	

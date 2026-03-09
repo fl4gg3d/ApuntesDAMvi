@@ -1,51 +1,58 @@
-let cod=document.getElementById("cod");
-let nom=document.getElementById("nom");
-let amplada=document.getElementById("amplada");
-let alcada=document.getElementById("alcada");
-let polzades=document.getElementById("polzada");
-let hercis=document.getElementById("hercis");
-let monitors = [];
-
-// function boton1(){
-//     let taula = document.getElementById("tbody");
-//     taula.innerHTML= "";
-//
-//     for (let i = 0; i < monitors.length; i++) {
-//         tbody.innerHTML +=
-//             "<tr>" +
-//             "<td>" + monitors[i].cod + "</td>" +
-//             "<td>" + monitors[i].nom + "</td>" +
-//             "<td>" + monitors[i].amplada + "</td>" +
-//             "<td>" + monitors[i].alcada + "</td>" +
-//             "<td>" + monitors[i].polzades + "</td>" +
-//             "<td>" + monitors[i].hercis + "</td>" +
-//             "</tr>";
-//
-//     }
-// }
+const monitors = [
+    {
+        COD:1234,
+        nom: "AOC123",
+        amplada: 3,
+        altura: 4,
+        polzadas:56,
+        hez:20
+    },
+    {
+        COD:2222,
+        nom: "LG234",
+        amplada: 2,
+        altura: 3,
+        polzadas:62,
+        hez:50
+    },
+    {
+        COD:4344443,
+        nom: "SAMSUNG124",
+        amplada: 1,
+        altura: 2,
+        polzadas:94,
+        hez:80
+    }
+];
 
 function boton2(){
+    for (const monitor of monitors) {
+        const taula = document.getElementById("dadesM");
+        const tr = document.createElement("tr");
+        const codTd = document.createElement('td');
+        const nomTd = document.createElement('td');
+        const ampTd = document.createElement('td');
+        const alcTd = document.createElement('td');
+        const polzadesTd = document.createElement('td');
+        const hercisTd = document.createElement('td');
 
-    let taula = document.getElementById("dadesM");
-    let nouMonitor = {
-        cod: cod.value,
-        nom: nom.value,
-        amplada: amplada.value,
-        alcada: alcada.value,
-        polzades: polzades.value,
-        hercis: hercis.value
+        codTd.innerText = monitor.COD;
+        nomTd.innerText = monitor.nom;
+        ampTd.innerText = monitor.amplada;
+        alcTd.innerText = monitor.altura;
+        polzadesTd.innerText = monitor.polzadas;
+        hercisTd.innerText = monitor.hez;
+
+        tr.appendChild(codTd);
+        tr.appendChild(nomTd);
+        tr.appendChild(ampTd);
+        tr.appendChild(alcTd);
+        tr.appendChild(polzadesTd);
+        tr.appendChild(hercisTd);
+        taula.appendChild(tr);
     }
-    monitors.push(nouMonitor);
 
-    taula.innerHTML +=
-        "<tr>"+
-        "<td>"+nouMonitor.cod+"</td>"+
-        "<td>"+nouMonitor.nom+"</td>"+
-        "<td>"+nouMonitor.amplada+"</td>"+
-        "<td>"+nouMonitor.alcada+"</td>"+
-        "<td>"+nouMonitor.polzades+"</td>"+
-        "<td>"+nouMonitor.hercis+"</td>"+
-        "</tr>";
 
 }
+
 

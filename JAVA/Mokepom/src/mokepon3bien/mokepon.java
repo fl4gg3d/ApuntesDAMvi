@@ -1,33 +1,33 @@
-package mokepon3;
+package mokepon3bien;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class mokepon {
 
-	String nombre;
+	private String nombre;
 	
 	// SALUD
-	int hpMax;
-	int hpAct;
+	private int hpMax;
+	private int hpAct;
 
 	// ESTADO
-	boolean debilitado;
+	private boolean debilitado;
 
 	// ESTADISTICAS
-	int atk;
-	int def;
-	int vel;
+	private int atk;
+	private int def;
+	private int vel;
 
 	// NIVEL
-	int level;
-	int exp;
+	private int level;
+	private int exp;
 
 	// TIPO
-	Tipos tipo;
+	private Tipos tipo;
 
 	// SET ATAQUES
-	ArrayList<Ataque> setAtks = new ArrayList<Ataque>();
+	private ArrayList<Ataque> setAtks = new ArrayList<Ataque>();
 	
 	
 	//CONSTRUCCIONES
@@ -187,5 +187,65 @@ public class mokepon {
 		System.out.println("El daño realizado a " + atacado.nombre + " es de: " + (int) damage);
 		System.out.println("Vida Enemigo: " + atacado.hpAct);
 	}
+	
+	//CAPTURA
+    public mokCaptura capturar(String nomEntrenador, String nomDonat) {
+        if(!(this instanceof mokCaptura)) {
+        	System.out.println("Captura realizada");
+        	mokCaptura poke = new mokCaptura(this, nomDonat, nomEntrenador);
+            return poke;
+        }else{
+            System.out.println("No pots capturar un Mokepon que ja esta capturat");
+            return (mokCaptura) this;
+        }
+    }
 	//FIN METODOS
+    //GETTERS
+	public String getNombre() {
+		return nombre;
+	}
+	public int getHpMax() {
+		return hpMax;
+	}
+	public int getHpAct() {
+		return hpAct;
+	}
+	public boolean isDebilitado() {
+		return debilitado;
+	}
+	public int getAtk() {
+		return atk;
+	}
+	public int getDef() {
+		return def;
+	}
+	public int getVel() {
+		return vel;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public int getExp() {
+		return exp;
+	}
+	public Tipos getTipo() {
+		return tipo;
+	}
+	public ArrayList<Ataque> getSetAtks() {
+		return setAtks;
+	}
+	//FIN GETTERS
+	//SETTERS
+	public void setHpAct(int hpAct) {
+		if(hpAct < 0) {
+			this.hpAct = 0;
+		}
+		else if(hpAct > this.hpMax) {
+			this.hpAct = this.hpMax;
+		}
+	}
+	public void setDebilitado(boolean debilitado) {
+		this.debilitado = debilitado;
+	}
+	//FIN SETTERS
 }

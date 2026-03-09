@@ -6,10 +6,14 @@ let polzades=document.getElementById("polzada");
 let hercis=document.getElementById("hercis");
 let monitors = [];
 
-function boton2(){
+function eliminar(){
 
-    let taula2 = document.getElementById("dadesM");
+}
 
+function boton3(){
+
+    let taula = document.getElementById("dadesM");
+    taula.replaceChildren();
     let nouMonitor = {
         cod: cod.value,
         nom: nom.value,
@@ -19,8 +23,6 @@ function boton2(){
         hercis: hercis.value
     }
     monitors.push(nouMonitor);
-
-
     const tr = document.createElement("tr");
     const codTd = document.createElement('td');
     const nomTd = document.createElement('td');
@@ -28,7 +30,6 @@ function boton2(){
     const alcTd = document.createElement('td');
     const polzadesTd = document.createElement('td');
     const hercisTd = document.createElement('td');
-
 
     for (const monitor of monitors) {
 
@@ -46,7 +47,9 @@ function boton2(){
         tr.appendChild(hercisTd);
         tr.appendChild(polzadesTd);
         tr.appendChild(hercisTd);
-        taula2.appendChild(tr);
+
+        document.querySelector("tbody").append(tr);
+
     }
 
 

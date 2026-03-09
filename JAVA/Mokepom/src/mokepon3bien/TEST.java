@@ -1,4 +1,4 @@
-package mokepon3;
+package mokepon3bien;
 
 public class TEST {
 
@@ -17,14 +17,19 @@ public class TEST {
 		
 		boolean combate = true;
 		
-		
 		while(combate) {
 			meow.Atacar(chaca, 0);
 			chaca.Atacar(meow, 1);
-			if(chaca.debilitado || meow.debilitado) {
+			if(chaca.isDebilitado() || meow.isDebilitado()) {
 				combate = false;
 			}
 		}
+		
+		meow = meow.capturar("Ruby", "Meow");
+		meow.capturar("Ruby", "Meow");
+		meow.capturar("Ruby", "Meow");
+		
+		System.out.println(meow instanceof mokCaptura);
 		
 		
 		
