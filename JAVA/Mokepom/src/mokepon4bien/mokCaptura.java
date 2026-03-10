@@ -1,11 +1,14 @@
-package mokepon3bien;
+package mokepon4bien;
 
 public class mokCaptura extends mokepon{
 
 	String nombreP;
 	String nombreEntrenador;
 	private int felicidad;
+	Objeto objetoP;
+	Equipamiento objetoEquipado;
 	static int numeroPokemonsCapturats;
+	
 	
 	//CONSTRUCTORES
 	public mokCaptura(String nom, Tipos tipo) {

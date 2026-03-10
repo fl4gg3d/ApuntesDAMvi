@@ -1,4 +1,4 @@
-package mokepon2bien;
+package mokepon4bien;
 
 public enum Tipos {
 	

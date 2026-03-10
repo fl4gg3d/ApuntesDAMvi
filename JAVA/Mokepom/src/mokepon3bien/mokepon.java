@@ -85,7 +85,7 @@ public class mokepon {
 		//ESTADO
 		this.debilitado = false;
 		//SUBIR DE NIVEL (SI HACE FALTA)
-		if(level > 1) {
+		if(level >= 1) {
 			for (int i = 0; i < level; i++) {
 				subirLevel();
 			}
@@ -153,9 +153,9 @@ public class mokepon {
 		debilitadoEnCombate();
 		if(!this.debilitado) {
 			if(!atacado.debilitado) {
-				if(this.setAtks.get(numAtak).useAct > 0) {
-					double damage = (((((2 * this.level) / 5) + 2) * (this.setAtks.get(numAtak).power) * (this.atk / atacado.def)/ 50 + 2) * (efectivitat(this.setAtks.get(numAtak).tipo, atacado.tipo)));
-					this.setAtks.get(numAtak).useAct--;
+				if(this.setAtks.get(numAtak).getUseAct() > 0) {
+					double damage = (((((2 * this.level) / 5) + 2) * (this.setAtks.get(numAtak).getPower()) * (this.atk / atacado.def)/ 50 + 2) * (efectivitat(this.setAtks.get(numAtak).getTipo(), atacado.tipo)));
+					this.setAtks.get(numAtak).setUseAct(this.setAtks.get(numAtak).getUseAct()-1);
 					atacado.hpAct -= (int) damage;
 					displayCombate(atacado, damage, numAtak);	
 				}
@@ -177,7 +177,7 @@ public class mokepon {
 	}
 	public void displayCombate(mokepon atacado, double damage, int numAtak) {
 		System.out.println();
-		System.out.println(this.nombre + " a usado: " + this.setAtks.get(numAtak).nombre);
+		System.out.println(this.nombre + " a usado: " + this.setAtks.get(numAtak));
 		if(efectivitat(this.tipo, atacado.tipo) == 2) {
 			System.out.println("ES SUPEREFECTIVO!");
 		}
@@ -193,6 +193,7 @@ public class mokepon {
         if(!(this instanceof mokCaptura)) {
         	System.out.println("Captura realizada");
         	mokCaptura poke = new mokCaptura(this, nomDonat, nomEntrenador);
+        	mokCaptura.numeroPokemonsCapturats++;
             return poke;
         }else{
             System.out.println("No pots capturar un Mokepon que ja esta capturat");
@@ -248,4 +249,20 @@ public class mokepon {
 		this.debilitado = debilitado;
 	}
 	//FIN SETTERS
+	//toStrings
+	@Override
+	public String toString() {
+		return "\n--Informacion Mokepon-- \n"
+				+ "Nombre: " + nombre + "\n"
+				+ "·Vida Maxima = " + hpMax + "\n"
+				+ "·Vida Actual = " + hpAct + "\n"
+				+ "·Estado = " + debilitado + "\n"
+				+ "·Ataque = " + atk + "\n"
+				+ "·Defensa = " + def + "\n"
+				+ "·Velocidad = " + vel + "\n"
+				+ "·Nivel = " + level + "\n"
+				+ "·Puntos de experiencia = " + exp + "\n"
+				+ "·Tipo: "+ tipo + "\n";
+		
+	}
 }

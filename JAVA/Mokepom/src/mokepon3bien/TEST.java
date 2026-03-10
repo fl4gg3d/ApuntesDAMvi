@@ -25,14 +25,15 @@ public class TEST {
 			}
 		}
 		
+		System.out.println(chascarrido);
+		
 		meow = meow.capturar("Ruby", "Meow");
+		chaca = chaca.capturar("Ruby", "Chacalito");
+		System.out.println(mokCaptura.numeroPokemonsCapturats);
 		meow.capturar("Ruby", "Meow");
 		meow.capturar("Ruby", "Meow");
 		
-		System.out.println(meow instanceof mokCaptura);
-		
-		
-		
+		System.out.println(meow);
 	}
 
 }
