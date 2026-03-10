@@ -4,6 +4,8 @@ let amplada=document.getElementById("amplada");
 let alcada=document.getElementById("alcada");
 let polzades=document.getElementById("polzada");
 let hercis=document.getElementById("hercis");
+let body = document.getElementsByTagName("body")[0];
+
 let monitors = new Map ();
 function recarregarTaula(){
 
@@ -36,6 +38,17 @@ function recarregarTaula(){
         tr.appendChild(hercisTd);
 
         taula.appendChild(tr);
+
+        if(Number(monitor.cod) === 67){
+            tr.classList.add("perrico67");
+            body.classList.add("rgb");
+        }
+        else if(monitor.nom.toLowerCase().includes("persona")){
+            tr.classList.add("persona5");
+        }
+        else if(Number(monitor.hercis) >= 200){
+            tr.classList.add("marathon");
+        }
     }
 }
 function boton3(){
