@@ -31,16 +31,40 @@ public class TEST {
 
 		System.out.println(meow);
 
-		Objeto pocion = new Pocion("Pocion", 4);
+		mokCaptura pok = meow.capturar("Ruby", "MeowGatito");
+		
+		Objeto pocion = new Pocion("Pocion", 10);
 		Objeto revivir = new Revivir("Revivir");
 
 		revivir.Obtener(10);
 		pocion.Obtener(10);
 
-		revivir.utilizar(meow);
-		System.out.println(meow.getHpAct());
-		pocion.utilizar(meow);
-		System.out.println(meow.getHpAct());
+		revivir.utilizar(pok);
+		System.out.println(pok.getHpAct());
+		pocion.utilizar(pok);
+		System.out.println(pok.getHpAct());
+		
+		
+		Arma espada = new Arma("Espada MataDioses", 99);
+		
+		espada.equipar(pok);
+		
+		System.out.println(pok);
+		
+		espada.desequipar(pok);
+		
+		System.out.println(pok);
+		
+		Armadura armor = new Armadura("Armadura de Arceus", 999);
+		
+		armor.equipar(pok);
+		
+		System.out.println(pok);
+		
+		armor.desequipar(pok);
+		
+		System.out.println(pok);
 	}
+	
 
 }
