@@ -1,7 +1,9 @@
-package mokepon4bien;
+package mokepon6bien;
 
-public class Arma extends Objeto implements Equipamiento{
-	
+import mokepon6bien.objetos.Objeto;
+
+public class Arma extends Objeto implements Equipamiento {
+
 	public Arma(String nombre, int ataqueExtra) {
 		super(nombre);
 		this.ataqueExtra = ataqueExtra;

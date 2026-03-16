@@ -1,6 +1,4 @@
-package mokepon4bien;
-
-import java.util.Objects;
+package mokepon5bien;
 
 public class mokCaptura extends mokepon {
 
@@ -24,7 +22,8 @@ public class mokCaptura extends mokepon {
 
 	public mokCaptura(mokepon mok, String nomP, String nomEntrenador) {
 
-		super(mok.getNombre(), mok.getHpMax(), mok.getLevel(), mok.getAtk(), mok.getDef(), mok.getVel(), mok.getTipo());
+		super(mok.getNombre(), mok.getHpMax(), mok.getLevel(), mok.getAtk(), mok.getDef(), mok.getVel(), mok.getTipo(),
+				mok.getSexo());
 		this.felicidad = 50;
 		this.nombreEntrenador = nomEntrenador;
 		this.nombreP = nomP;
@@ -73,26 +72,5 @@ public class mokCaptura extends mokepon {
 	public int getFelicidad() {
 		return felicidad;
 	}
-
 	// FIN GETTERS
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + Objects.hash(nombreEntrenador, nombreP);
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		mokCaptura other = (mokCaptura) obj;
-		return Objects.equals(nombreEntrenador, other.nombreEntrenador) && Objects.equals(nombreP, other.nombreP);
-	}
-
 }

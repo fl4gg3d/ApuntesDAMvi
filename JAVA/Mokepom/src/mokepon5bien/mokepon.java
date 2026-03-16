@@ -1,10 +1,9 @@
-package mokepon4bien;
+package mokepon5bien;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Random;
 
-public class mokepon {
+public class mokepon implements Comparable<mokepon>{
 
 	private String nombre;
 
@@ -23,6 +22,9 @@ public class mokepon {
 	// NIVEL
 	private int level;
 	private int exp;
+
+	// SEXO
+	private Sexo sexo;
 
 	// TIPO
 	private Tipos tipo;
@@ -48,6 +50,7 @@ public class mokepon {
 		this.level = 1;
 		// TIPO
 		this.tipo = Tipos.normal;
+		this.sexo = elegirSexo();
 
 	}
 
@@ -68,11 +71,12 @@ public class mokepon {
 		this.level = 1;
 		// TIPO
 		this.tipo = tipo;
+		this.sexo = elegirSexo();
 
 	}
 
 	// MOKE PRED COMPLEJO
-	public mokepon(String nom, int hp_max, int level, int atk, int def, int vel, Tipos tipo) {
+	public mokepon(String nom, int hp_max, int level, int atk, int def, int vel, Tipos tipo, Sexo sexo) {
 
 		this.nombre = nom;
 		// STATS
@@ -86,16 +90,23 @@ public class mokepon {
 		this.tipo = tipo;
 		// ESTADO
 		this.debilitado = false;
+		this.sexo = sexo;
 		// SUBIR DE NIVEL (SI HACE FALTA)
 		if (level >= 1) {
 			for (int i = 0; i < level; i++) {
 				subirLevel();
 			}
 		}
+
 	}
 	// FIN CONSTRUCCIONES
 
 	// METODOS
+	//Decir nombre
+	public void decirNombre() {
+		this.getNombre();
+	}
+	
 	// XP otorgada
 	public void xpMokepon(int xp) {
 		this.exp += xp;
@@ -197,15 +208,46 @@ public class mokepon {
 	}
 
 	// CAPTURA
-	public mokCaptura capturar(String nomEntrenador, String nomDonat) {
+	public mokCaptura capturar(String nomEntrenador, String nomDonat) throws Exception {
 		if (!(this instanceof mokCaptura)) {
 			System.out.println("Captura realizada");
 			mokCaptura poke = new mokCaptura(this, nomDonat, nomEntrenador);
 			mokCaptura.numeroPokemonsCapturats++;
 			return poke;
 		} else {
-			System.out.println("No pots capturar un Mokepon que ja esta capturat");
-			return (mokCaptura) this;
+			throw new MokeponCapturadoException("El mokepon ya ha sido capturado");
+		}
+	}
+
+	// SEXO ALEATORIO
+	private Sexo elegirSexo() {
+		Random rand = new Random();
+		if (rand.nextInt(0, 1) == 0) {
+			return sexo.Macho;
+		} else {
+			return sexo.Hembra;
+		}
+
+	}
+
+	// REPRODUCCION
+	public Huevo reproduccion(mokepon moke1, mokepon moke2) throws Exception {
+		if (moke1.tipo != moke2.tipo) {
+			throw new TipusDiferentsException("Los mokepons son de tipos diferentes.");
+		} else if (moke1.sexo == moke2.sexo) {
+			throw new MismoSexoException("Los pokemons son del mismo sexo.");
+		} else if (moke1.debilitado || moke2.debilitado) {
+			throw new MokeponDebilitadoException("Alguno de los mokepons esta debilitado \n" + moke1.nombre + ": "
+					+ moke1.debilitado + "\n" + moke2.nombre + ": " + moke2.debilitado);
+		} else {
+			Random rand = new Random();
+			String nombreEspecie = "";
+			if (rand.nextInt() == 0) {
+				nombreEspecie = moke1.nombre;
+			} else {
+				nombreEspecie = moke2.nombre;
+			}
+			return new Huevo(nombreEspecie, moke1.tipo);
 		}
 	}
 
@@ -255,6 +297,10 @@ public class mokepon {
 		return setAtks;
 	}
 
+	public Sexo getSexo() {
+		return sexo;
+	}
+
 	// FIN GETTERS
 	// SETTERS
 	public void setHpAct(int hpAct) {
@@ -286,27 +332,24 @@ public class mokepon {
 		return "\n--Informacion Mokepon-- \n" + "Nombre: " + nombre + "\n" + "·Vida Maxima = " + hpMax + "\n"
 				+ "·Vida Actual = " + hpAct + "\n" + "·Estado = " + debilitado + "\n" + "·Ataque = " + atk + "\n"
 				+ "·Defensa = " + def + "\n" + "·Velocidad = " + vel + "\n" + "·Nivel = " + level + "\n"
-				+ "·Puntos de experiencia = " + exp + "\n" + "·Tipo: " + tipo + "\n";
+				+ "·Puntos de experiencia = " + exp + "\n" + "·Tipo: " + tipo + "\n" + "·Sexo: " + sexo + "\n";
 
 	}
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(atk, debilitado, def, exp, level, nombre, setAtks, tipo, vel);
-	}
+	public int compareTo(mokepon o) {
+		// 1 comparar por tipo
+	    if (this.tipo.ordinal() != o.tipo.ordinal()) {
+	        return this.tipo.ordinal() - o.tipo.ordinal();
+	    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		mokepon other = (mokepon) obj;
-		return atk == other.atk && debilitado == other.debilitado && def == other.def && exp == other.exp
-				&& level == other.level && Objects.equals(nombre, other.nombre)
-				&& Objects.equals(setAtks, other.setAtks) && tipo == other.tipo && vel == other.vel;
+	    // 2 comparar por nombre
+	    if (!this.nombre.equals(o.nombre)) {
+	        return this.nombre.compareTo(o.nombre);
+	    }
+
+	    // 3 comparar por nivel
+	    return this.level - o.level;
 	}
 
 }
