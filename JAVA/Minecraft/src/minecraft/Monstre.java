@@ -12,6 +12,7 @@ public class Monstre extends NoJugable{
 	
 	//Metodos
 	public boolean atacar(Personatge P) {
+		P.setHp(P.getHp() - this.atac);
 		return viu;
 	}
 	
