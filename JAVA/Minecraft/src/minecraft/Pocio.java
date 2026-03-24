@@ -10,4 +10,12 @@ public class Pocio extends Item{
 		this.poder = poder;
 		this.tipo = Enum;
 	}
+
+	@Override
+	public void avaluar() {
+		System.out.println("Nom: "+this.nom + " Tipo: "+this.tipo);
+		if(this.valor > 50) {
+			System.out.println("Es molt valuosa!");
+		}
+	}
 }

@@ -5,5 +5,13 @@ public class Component extends Item{
 	public Component(String nom, int valor) {
 		super(nom, valor);
 	}
+
+	@Override
+	public void avaluar() {
+		System.out.println("Nom: "+this.nom);
+		if(this.valor > 100) {
+			System.out.println("Es molt valuosa!");
+		}
+	}
 	
 }

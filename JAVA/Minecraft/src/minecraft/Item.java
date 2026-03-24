@@ -12,8 +12,6 @@ public abstract class Item {
 	
 	
 	//Metodos
-	public void avaluar() {
-		
-	}
+	public abstract void avaluar();
 	
 }
