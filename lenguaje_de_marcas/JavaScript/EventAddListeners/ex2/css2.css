@@ -1,0 +1,26 @@
+#container {
+    margin: 20px;
+}
+#pare, #fill, #net {
+    padding: 20px;
+    border: 2px solid #333;
+    margin: 10px;
+    text-align: center;
+}
+#pare {
+    background-color: blue;
+}
+#fill {
+    background-color: green;
+}
+#net {
+    background-color: red;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: fuchsia;
+    color: white;
+    border: none;
+}
