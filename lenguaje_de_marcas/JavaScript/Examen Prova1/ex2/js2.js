@@ -1,8 +1,6 @@
 const divHtml = document.getElementById("container");
 
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+
 
 function boton(){
     let divd = document.createElement("div");
