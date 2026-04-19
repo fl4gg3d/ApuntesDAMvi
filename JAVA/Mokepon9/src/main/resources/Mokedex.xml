@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<entrada id="45">
-    <nom>Mileplume</nom>
-    <tipus>Planta,Veneno</tipus>
-</entrada>
+<mokedex>
+    <nom_entrenador>Ash</nom_entrenador>
+    <entrades>
+        <entrada id="45">
+            <nom>Mileplume</nom>
+            <tipus>Planta,Veneno</tipus>
+            <pes>20.5</pes>
+            <evolucions>
+                <pre_evolucio>-</pre_evolucio>
+                <post_evolucio>Vileplume</post_evolucio>
+            </evolucions>
+            <localitzacions>
+                <localitzacio>Ruta 1</localitzacio>
+                <localitzacio>Ruta 6</localitzacio>
+                <localitzacio>Bosc dels Mulmasaurs</localitzacio>
+            </localitzacions>
+        </entrada>
+    </entrades>
+</mokedex>
