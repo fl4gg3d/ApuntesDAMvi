@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; max-width: 420px; margin: 40px auto; }
+form { display: grid; gap: 10px; }
+input, button { padding: 8px; font-size: 16px; }
+p { padding: 10px; min-height: 20px; }
+.error { background: red; color: white; }
+.success { background: green; color: black; }
