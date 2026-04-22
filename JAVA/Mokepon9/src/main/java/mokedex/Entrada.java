@@ -1,20 +1,31 @@
 package mokedex;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-//l'element es diu persona en el XML
 @XmlRootElement(name = "entrada")
-//l'ordre en que apareixeran els seus elements interns en el XML
-@XmlType(propOrder = { "nom", "tipus" })
+
+@XmlType(propOrder = { "nom", "tipus", "pes", "evolucions", "localitzacions" })
+
 public class Entrada {
 
 	int id;
-	String nom, tipus;
+	String nom;
+	String tipus;
+	float pes;
 
-	// es un atribut. els atributs son els que es posen a la propia etiqueta arrel
+	Evolucions evolucions;
+
+	List<String> localitzacions = new ArrayList<>();
+
+	// ATRIBUTO ID
+
 	@XmlAttribute
 	public int getId() {
 		return id;
@@ -24,7 +35,8 @@ public class Entrada {
 		this.id = id;
 	}
 
-	// es un element. Com que no especifiquem name, s'assumeix que es diu nom
+	// NOM
+
 	@XmlElement
 	public String getNom() {
 		return nom;
@@ -34,20 +46,58 @@ public class Entrada {
 		this.nom = nom;
 	}
 
-	// aquests tags es posen sempre abans del getter
+	// TIPUS
+
 	@XmlElement
 	public String getTipus() {
 		return tipus;
 	}
 
-	public void setTipus(String t) {
-		this.tipus = t;
+	public void setTipus(String tipus) {
+		this.tipus = tipus;
+	}
+
+	// PES (nuevo)
+
+	@XmlElement
+	public float getPes() {
+		return pes;
+	}
+
+	public void setPes(float pes) {
+		this.pes = pes;
+	}
+
+	// EVOLUCIONS (nuevo objeto)
+
+	@XmlElement
+	public Evolucions getEvolucions() {
+		return evolucions;
+	}
+
+	public void setEvolucions(Evolucions evolucions) {
+		this.evolucions = evolucions;
+	}
+
+	// LOCALITZACIONS (lista)
+
+	@XmlElementWrapper(name = "localitzacions")
+
+	@XmlElement(name = "localitzacio")
+
+	public List<String> getLocalitzacions() {
+		return localitzacions;
+	}
+
+	public void setLocalitzacions(List<String> localitzacions) {
+		this.localitzacions = localitzacions;
 	}
 
 	@Override
 	public String toString() {
-		return "Mokemon: "+nom + " \nNum.Mokedex: " + id + "\nTipus: " + tipus;
+
+		return "Mokemon: " + nom + "\nNum.Mokedex: " + id + "\nTipus: " + tipus + "\nPes: " + pes;
+
 	}
-	
-	
+
 }

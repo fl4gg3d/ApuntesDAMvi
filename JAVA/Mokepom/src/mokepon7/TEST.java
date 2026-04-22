@@ -111,8 +111,65 @@ public class TEST {
 		System.out.println();
 		System.out.println("BuscarGim");
 		cercaLider("Isla de Epstein");
+		System.out.println();
+		invictes(8);
+		copiaSeguretat("Gimnasos.txt", "gimnasioCopia.txt");
+		System.out.println();
+		canviLider("Isla de Epstein", "Diddy");
+		cercaLider("Isla de Epstein");
 	}
+	public static void copiaSeguretat(String path1, String path2) {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(path1));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(path2));
+			String linea;
+			while((linea = br.readLine()) != null) {
+				bw.write(linea);
+				bw.newLine();
+			}
+			br.close();
+			bw.close();
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void canviLider(String nomGimnas, String nouLider) {
+		File og = new File("Gimnasos.txt");
+		File temp = new File("Temp.txt");
+		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(og));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(temp));
+			
+			String linea;
+			
+			while((linea = br.readLine()) != null) {
+				String[] partes = linea.split(";");
+				if(partes[0].equals(nomGimnas)) {
+					partes[2] = nouLider;
+					linea = partes[0] + ";" + partes[1] + ";" + partes[2] +";"+ partes[3];
+				}
+				bw.write(linea);
+	            bw.newLine(); 
+			}
+			br.close();
+	        bw.close();
+         // Borrar original
+            if (og.delete()) {
 
+                // Renombrar temporal
+                temp.renameTo(og);
+
+                System.out.println("Líder canviat correctament.");
+
+            } else {
+                System.out.println("Error eliminant fitxer original.");
+            }
+		}catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
 	public static void mostraGimnasos() {
 		try {
             File f = new File("Gimnasos.txt");
@@ -161,7 +218,21 @@ public class TEST {
         }
 	}
 	public static void invictes(int n) {
-		
+		try {
+			File f = new File("Gimnasos.txt");
+			FileReader fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			while(br.ready()) {
+				String[] Split = br.readLine().split(";");
+				int numeroGimnasio = Integer.parseInt(Split[3]); 
+				if(numeroGimnasio < n) {
+					System.out.println(Split[0]);
+				}
+			}
+			br.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	public static void afegirGimnas(String nomGimnas, String ciutat, String liderGimnas, int numSuperao) {
 		try {
