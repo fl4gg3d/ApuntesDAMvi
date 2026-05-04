@@ -21,11 +21,11 @@ public class TasquesAmbPriori {
 			HashMap<Integer, String> elementos = new HashMap<Integer, String>();
 			for (int j = 0; j < tareas; j++) {
 				int num = sc.nextInt();
-				String tarea = sc.nextLine();
+				String tarea = sc.nextLine().trim();
 				elementos.put(num, tarea);
 				cua.add(num);
 			}
-			for (int j = 0; i < posTarea - 1; i++) {
+			for (int j = 0; j < posTarea - 1; j++) {
 				cua.poll();
 			}
 			System.out.println(elementos.get(cua.poll()));
