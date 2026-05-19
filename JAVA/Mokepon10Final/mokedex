@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mokedex>
+    <nom_entrenador>Dani</nom_entrenador>
+    <entrades>
+        <entrada id="10">
+            <nom>Xarmeleon</nom>
+            <tipus>Foc</tipus>
+            <pes>34.5</pes>
+            <evolucions>
+                <pre_evolucio>Xarmander</pre_evolucio>
+                <post_evolucio>Xarizard</post_evolucio>
+            </evolucions>
+            <localitzacions>
+                <localitzacio>Ruta 1</localitzacio>
+                <localitzacio>Ruta 3</localitzacio>
+                <localitzacio>Ruta 5</localitzacio>
+                <localitzacio>Ruta 66</localitzacio>
+            </localitzacions>
+        </entrada>
+        <entrada id="25">
+            <nom>Picatxu</nom>
+            <tipus>Electric</tipus>
+            <pes>25.5</pes>
+            <evolucions>
+                <pre_evolucio>Pitxu</pre_evolucio>
+                <post_evolucio>Raitxu</post_evolucio>
+            </evolucions>
+            <localitzacions>
+                <localitzacio>Ruta 2</localitzacio>
+                <localitzacio>Ruta 4</localitzacio>
+                <localitzacio>Ruta 6</localitzacio>
+            </localitzacions>
+        </entrada>
+        <entrada id="10">
+            <nom>Xarmeleon</nom>
+            <tipus>Foc</tipus>
+            <pes>34.5</pes>
+            <evolucions>
+                <pre_evolucio>Xarmander</pre_evolucio>
+                <post_evolucio>Xarizard</post_evolucio>
+            </evolucions>
+            <localitzacions>
+                <localitzacio>Ruta 1</localitzacio>
+                <localitzacio>Ruta 3</localitzacio>
+                <localitzacio>Ruta 5</localitzacio>
+                <localitzacio>Ruta 66</localitzacio>
+            </localitzacions>
+        </entrada>
+    </entrades>
+</mokedex>

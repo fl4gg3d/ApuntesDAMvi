@@ -8,7 +8,7 @@ echo "<br/>";
 for($i = 0; $i < 10; $i++){
     $multiplicacio = $random * $i;
     echo $random." x ".$i." = ".$multiplicacio."<br/>";
-};
+}
 
 echo "<br/>";
 
@@ -20,4 +20,22 @@ for($i = $randomT; $i >= 1; $i--){
         echo "X";
     }
     echo "<br/>";
-};
+}
+echo "<br/>";
+
+function productes(...$rest){
+    $arrayDih = [];
+    foreach($rest as $producte){
+        $value = rand(1,10);
+        $arrayDih[$producte] = $value;
+    }
+    return $arrayDih;
+}
+$dicc = productes("fruta","manzanas", "lácteos","leche", "panadería","pan", "verduras","tomates", "proteínas","pollo", "bebidas","agua");
+$peruTotal = 0;
+
+foreach($dicc as $producte => $valor){
+    $peruTotal += $valor;
+    echo $producte."=".$valor."€"."<br/>";
+}
+echo "Preu Total"." = ".$peruTotal."€"."<br/>";

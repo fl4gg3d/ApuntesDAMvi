@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entrada id="10">
+    <nom>Xarmeleon</nom>
+    <tipus>Foc</tipus>
+    <pes>34.5</pes>
+    <evolucions>
+        <pre_evolucio>Xarmander</pre_evolucio>
+        <post_evolucio>Xarizard</post_evolucio>
+    </evolucions>
+    <localitzacions>
+        <localitzacio>Ruta 1</localitzacio>
+        <localitzacio>Ruta 3</localitzacio>
+        <localitzacio>Ruta 5</localitzacio>
+    </localitzacions>
+</entrada>
