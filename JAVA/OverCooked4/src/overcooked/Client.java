@@ -1,12 +1,16 @@
 package overcooked;
 
-public class Client {
+import java.awt.List;
+import java.util.ArrayList;
+
+public class Client implements OrderSubject, ConsumptionSubject{
 	private String nom;
 	private int tempsPaciencia;
 	private String preferenciaCuina;
 	private boolean marxa;
 	private String alergia;
-	
+	private List<OrderObserver> orderObservers = new ArrayList<>();
+	private ConsumptionObserver consumptionObserver;
 	
 	public Client(String nom, String preferenciaCuina) {
 		super();
@@ -59,5 +63,41 @@ public class Client {
 		}
 		
 		restaurant.afegirPlatBrut(plat);
+	}
+
+	@Override
+	public void registerConsumptionObserver(ConsumptionObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeConsumptionObserver(ConsumptionObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifyConsumptionObservers(Plat plat, boolean paid, double amount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerOrderObserver(OrderObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeOrderObserver(OrderObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifyOrderObservers(Plat plat) {
+		// TODO Auto-generated method stub
+		
 	}
 }
