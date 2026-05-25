@@ -3,7 +3,7 @@ const input = document.getElementById("inputJuego");
 function peticion(){
     $.ajax({
         method:"GET",
-        url:".php",
+        url:"ex2.php",
         data:{"nombreJuego":input.value},
         dataType:"json",
         success:function (data){
