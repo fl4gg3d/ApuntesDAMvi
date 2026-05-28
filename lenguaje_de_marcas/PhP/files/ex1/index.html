@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercici 1 — Usuaris AJAX</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #7effd4;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: .8rem;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 1.8rem;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #888;
+      margin-bottom: .3rem;
+    }
+
+    input {
+      width: 100%;
+      padding: .65rem .8rem;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #e0e0e0;
+      font-family: inherit;
+      font-size: .95rem;
+      margin-bottom: 1rem;
+      transition: border-color .2s;
+    }
+    input:focus { outline: none; border-color: #7effd4; }
+
+    .buttons {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      flex: 1;
+      padding: .6rem .5rem;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background: #222;
+      color: #ccc;
+      font-family: inherit;
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    button:hover { background: #2e2e2e; color: #fff; border-color: #7effd4; }
+
+    #resultat {
+      width: 100%;
+      max-width: 500px;
+      min-height: 2rem;
+      font-size: .9rem;
+    }
+
+    #resultat.ok  { color: #7effd4; }
+    #resultat.ko  { color: #ff6b6b; }
+
+    /* Taula d'usuaris */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .85rem;
+      margin-top: .5rem;
+    }
+    th {
+      text-align: left;
+      padding: .4rem .6rem;
+      background: #222;
+      color: #7effd4;
+      border-bottom: 1px solid #333;
+      text-transform: uppercase;
+      font-size: .75rem;
+      letter-spacing: .08em;
+    }
+    td {
+      padding: .4rem .6rem;
+      border-bottom: 1px solid #222;
+      color: #ccc;
+    }
+    tr:last-child td { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+<h1>Gestió d'Usuaris</h1>
+
+<div class="card">
+  <label for="inputEmail">Correu de l'institut</label>
+  <input type="text" id="inputEmail" placeholder="nom@ies-sabadell.cat" />
+
+  <label for="inputPass">Contrasenya</label>
+  <input type="password" id="inputPass" placeholder="••••••••" />
+
+  <div class="buttons">
+    <button onclick="getUsers()">GetUsers</button>
+    <button onclick="login()">Login</button>
+    <button onclick="register()">Register</button>
+  </div>
+</div>
+
+<!-- Aquí es mostraran els missatges de resposta i la taula d'usuaris -->
+<p id="resultat"></p>
+
+<script>
+  // ─── Helpers ────────────────────────────────────────────────────
+  function mostrarResultat(missatge, estat) {
+    const p = document.getElementById('resultat');
+    p.textContent = missatge;
+    p.className = estat; // 'ok' o 'ko'
+  }
+
+  // ─── GET USERS ──────────────────────────────────────────────────
+  function getUsers() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'getUsers.php', true);
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const usuaris = JSON.parse(xhr.responseText);
+        mostrarTaulaUsuaris(usuaris);
+      } else {
+        mostrarResultat('Error en obtenir els usuaris.', 'ko');
+      }
+    };
+
+    xhr.onerror = function () {
+      mostrarResultat('Error de xarxa.', 'ko');
+    };
+
+    xhr.send();
+  }
+
+  // Crea una taula HTML amb JS pur (createElement / appendChild)
+  function mostrarTaulaUsuaris(usuaris) {
+    const p = document.getElementById('resultat');
+    p.className = '';
+
+    // Buidar contingut anterior
+    while (p.firstChild) p.removeChild(p.firstChild);
+
+    if (usuaris.length === 0) {
+      p.textContent = 'No hi ha usuaris registrats.';
+      p.className = 'ko';
+      return;
+    }
+
+    // Crear taula
+    const taula = document.createElement('table');
+
+    // Capçalera
+    const thead = document.createElement('thead');
+    const trHead = document.createElement('tr');
+    ['ID', 'Email'].forEach(text => {
+      const th = document.createElement('th');
+      th.textContent = text;
+      trHead.appendChild(th);
+    });
+    thead.appendChild(trHead);
+    taula.appendChild(thead);
+
+    // Cos
+    const tbody = document.createElement('tbody');
+    usuaris.forEach(u => {
+      const tr = document.createElement('tr');
+
+      const tdId = document.createElement('td');
+      tdId.textContent = u.idUsuari;
+      tr.appendChild(tdId);
+
+      const tdEmail = document.createElement('td');
+      tdEmail.textContent = u.email;
+      tr.appendChild(tdEmail);
+
+      tbody.appendChild(tr);
+    });
+    taula.appendChild(tbody);
+
+    p.appendChild(taula);
+  }
+
+  // ─── REGISTER ───────────────────────────────────────────────────
+  function register() {
+    const email      = document.getElementById('inputEmail').value.trim();
+    const contrasenya = document.getElementById('inputPass').value.trim();
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'register.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const resposta = JSON.parse(xhr.responseText);
+        if (resposta.estat === 'ok') {
+          mostrarResultat('✔ Usuari registrat: ' + resposta.usuari, 'ok');
+        } else {
+          mostrarResultat('✘ ' + resposta.missatge + ' (' + resposta.usuari + ')', 'ko');
+        }
+      }
+    };
+
+    xhr.onerror = function () {
+      mostrarResultat('Error de xarxa.', 'ko');
+    };
+
+    xhr.send('email=' + encodeURIComponent(email) + '&contrasenya=' + encodeURIComponent(contrasenya));
+  }
+
+  // ─── LOGIN ──────────────────────────────────────────────────────
+  function login() {
+    const email      = document.getElementById('inputEmail').value.trim();
+    const contrasenya = document.getElementById('inputPass').value.trim();
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'login.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const resposta = JSON.parse(xhr.responseText);
+        if (resposta.estat === 'ok') {
+          mostrarResultat('✔ Benvingut/da: ' + resposta.usuari, 'ok');
+        } else {
+          mostrarResultat('✘ ' + resposta.missatge + ' (' + resposta.usuari + ')', 'ko');
+        }
+      }
+    };
+
+    xhr.onerror = function () {
+      mostrarResultat('Error de xarxa.', 'ko');
+    };
+
+    xhr.send('email=' + encodeURIComponent(email) + '&contrasenya=' + encodeURIComponent(contrasenya));
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercici 2 — Personatges Anime</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0d0d1a;
+      color: #dde;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #a78bfa;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #2a2a3a;
+      padding-bottom: .8rem;
+      width: 100%;
+      max-width: 560px;
+      text-align: center;
+    }
+
+    .card {
+      background: #14142a;
+      border: 1px solid #2a2a3a;
+      border-radius: 8px;
+      padding: 1.6rem;
+      width: 100%;
+      max-width: 560px;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h2 {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #a78bfa;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #2a2a3a;
+      padding-bottom: .4rem;
+    }
+
+    label {
+      display: block;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #777;
+      margin-bottom: .25rem;
+    }
+
+    input {
+      width: 100%;
+      padding: .55rem .75rem;
+      background: #0d0d1a;
+      border: 1px solid #2a2a3a;
+      border-radius: 4px;
+      color: #dde;
+      font-family: inherit;
+      font-size: .9rem;
+      margin-bottom: .9rem;
+      transition: border-color .2s;
+    }
+    input:focus { outline: none; border-color: #a78bfa; }
+
+    button {
+      width: 100%;
+      padding: .6rem;
+      border: 1px solid #3a3a5a;
+      border-radius: 4px;
+      background: #1e1e3a;
+      color: #a78bfa;
+      font-family: inherit;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    button:hover { background: #2a2a4a; border-color: #a78bfa; }
+
+    .feedback {
+      width: 100%;
+      max-width: 560px;
+      min-height: 1.5rem;
+      font-size: .9rem;
+      padding: .5rem 0;
+      word-break: break-word;
+    }
+    .feedback.ok { color: #6ee7b7; }
+    .feedback.ko { color: #f87171; }
+  </style>
+</head>
+<body>
+
+<h1>Gestió de Personatges — Anime</h1>
+
+<!-- ── AFEGIR ─────────────────────────────────────── -->
+<div class="card">
+  <h2>➕ Afegir personatge</h2>
+
+  <label for="addId">ID Anime</label>
+  <input type="number" id="addId" placeholder="Ex: 1"/>
+
+  <label for="addNom">Nom del personatge</label>
+  <input type="text" id="addNom" placeholder="Ex: Goku"/>
+
+  <label for="addOrdre">Ordre</label>
+  <input type="number" id="addOrdre" placeholder="Ex: 1"/>
+
+  <button onclick="afegirPersonatge()">Afegir</button>
+</div>
+
+<!-- ── ACTUALITZAR ────────────────────────────────── -->
+<div class="card">
+  <h2>✏️ Actualitzar ordre d'un personatge</h2>
+
+  <label for="updId">ID Anime</label>
+  <input type="number" id="updId" placeholder="Ex: 1"/>
+
+  <label for="updNom">Nom del personatge</label>
+  <input type="text" id="updNom" placeholder="Ex: Goku"/>
+
+  <label for="updOrdre">Nou ordre</label>
+  <input type="number" id="updOrdre" placeholder="Ex: 3"/>
+
+  <button onclick="actualitzarPersonatge()">Actualitzar</button>
+</div>
+
+<!-- ── ELIMINAR ───────────────────────────────────── -->
+<div class="card">
+  <h2>🗑️ Eliminar personatge</h2>
+
+  <label for="delId">ID Anime</label>
+  <input type="number" id="delId" placeholder="Ex: 1"/>
+
+  <label for="delNom">Nom del personatge</label>
+  <input type="text" id="delNom" placeholder="Ex: Goku"/>
+
+  <button onclick="eliminarPersonatge()">Eliminar</button>
+</div>
+
+<!-- ── FEEDBACK ───────────────────────────────────── -->
+<p class="feedback" id="feedback"></p>
+
+<script>
+  // ─── Helper per mostrar feedback ────────────────────────────────
+  function mostrarFeedback(missatge, estat) {
+    const el = document.getElementById('feedback');
+    el.textContent = missatge;
+    el.className = 'feedback ' + estat;
+  }
+
+  // ─── AFEGIR ──────────────────────────────────────────────────────
+  function afegirPersonatge() {
+    const idAnime   = document.getElementById('addId').value.trim();
+    const personatge = document.getElementById('addNom').value.trim();
+    const ordre     = document.getElementById('addOrdre').value.trim();
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'addPersonatge.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const r = JSON.parse(xhr.responseText);
+        mostrarFeedback(
+          r.estat === 'ok'
+            ? '✔ ' + r.missatge + ' | Total: ' + r.numpersonatges
+            : '✘ ' + r.missatge,
+          r.estat
+        );
+      }
+    };
+
+    xhr.onerror = () => mostrarFeedback('Error de xarxa.', 'ko');
+
+    xhr.send(
+      'idAnime='    + encodeURIComponent(idAnime) +
+      '&personatge=' + encodeURIComponent(personatge) +
+      '&ordre='     + encodeURIComponent(ordre)
+    );
+  }
+
+  // ─── ACTUALITZAR ─────────────────────────────────────────────────
+  function actualitzarPersonatge() {
+    const idAnime    = document.getElementById('updId').value.trim();
+    const personatge = document.getElementById('updNom').value.trim();
+    const ordre      = document.getElementById('updOrdre').value.trim();
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'updatePersonatge.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const r = JSON.parse(xhr.responseText);
+        mostrarFeedback(
+          r.estat === 'ok' ? '✔ ' + r.missatge : '✘ ' + r.missatge,
+          r.estat
+        );
+      }
+    };
+
+    xhr.onerror = () => mostrarFeedback('Error de xarxa.', 'ko');
+
+    xhr.send(
+      'idAnime='    + encodeURIComponent(idAnime) +
+      '&personatge=' + encodeURIComponent(personatge) +
+      '&ordre='     + encodeURIComponent(ordre)
+    );
+  }
+
+  // ─── ELIMINAR ────────────────────────────────────────────────────
+  function eliminarPersonatge() {
+    const idAnime    = document.getElementById('delId').value.trim();
+    const personatge = document.getElementById('delNom').value.trim();
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'deletePersonatge.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const r = JSON.parse(xhr.responseText);
+        mostrarFeedback(
+          r.estat === 'ok'
+            ? '✔ ' + r.missatge + ' | Restants: ' + r.numpersonatges
+            : '✘ ' + r.missatge,
+          r.estat
+        );
+      }
+    };
+
+    xhr.onerror = () => mostrarFeedback('Error de xarxa.', 'ko');
+
+    xhr.send(
+      'idAnime='    + encodeURIComponent(idAnime) +
+      '&personatge=' + encodeURIComponent(personatge)
+    );
+  }
+</script>
+
+</body>
+</html>
